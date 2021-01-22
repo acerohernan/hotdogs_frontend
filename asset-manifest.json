@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.ffdbf388.chunk.js",
-    "main.js.map": "/static/js/main.ffdbf388.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.67f3afcf.js",
-    "runtime-main.js.map": "/static/js/runtime-main.67f3afcf.js.map",
-    "static/js/2.730f571a.chunk.js": "/static/js/2.730f571a.chunk.js",
-    "static/js/2.730f571a.chunk.js.map": "/static/js/2.730f571a.chunk.js.map",
-    "index.html": "/index.html",
-    "static/js/2.730f571a.chunk.js.LICENSE.txt": "/static/js/2.730f571a.chunk.js.LICENSE.txt"
+    "main.js": "/hot-dogs/static/js/main.ffdbf388.chunk.js",
+    "main.js.map": "/hot-dogs/static/js/main.ffdbf388.chunk.js.map",
+    "runtime-main.js": "/hot-dogs/static/js/runtime-main.e29a9784.js",
+    "runtime-main.js.map": "/hot-dogs/static/js/runtime-main.e29a9784.js.map",
+    "static/js/2.d1db49aa.chunk.js": "/hot-dogs/static/js/2.d1db49aa.chunk.js",
+    "static/js/2.d1db49aa.chunk.js.map": "/hot-dogs/static/js/2.d1db49aa.chunk.js.map",
+    "index.html": "/hot-dogs/index.html",
+    "static/js/2.d1db49aa.chunk.js.LICENSE.txt": "/hot-dogs/static/js/2.d1db49aa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.67f3afcf.js",
-    "static/js/2.730f571a.chunk.js",
+    "static/js/runtime-main.e29a9784.js",
+    "static/js/2.d1db49aa.chunk.js",
     "static/js/main.ffdbf388.chunk.js"
   ]
 }
