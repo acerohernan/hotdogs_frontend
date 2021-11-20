@@ -1,4 +1,7 @@
+//libraries
 import React, { useState, useEffect } from "react";
+
+//Components
 import { HiOutlineLocationMarker as LocationIcon } from "react-icons/hi";
 import {
   Container,
@@ -8,16 +11,12 @@ import {
   NameContainer,
   Distance,
 } from "./styles";
-
 import { CardLayout } from "../../components/CardLayout/index";
-
 import { Loader } from "../../components/Loader/index";
 
+//Utils
 import { names } from "../../names.json";
-
-const RandomName = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+import randomNumber from "../../utils/randomNumber";
 
 export const Home = () => {
   const [dogInfo, setDogInfo] = useState({
@@ -43,7 +42,7 @@ export const Home = () => {
     }, 1500);
   };
 
-  const handleSaveDog = (boolean) => {
+  const handleFavDog = (boolean) => {
     handleChangeCard();
     boolean
       ? handleAnimation("animate__animated animate__fadeOutRight")
@@ -54,7 +53,7 @@ export const Home = () => {
     setLoading(true);
     const response = await fetch("https://api.thedogapi.com/v1/images/search");
     const [data] = await response.json();
-    const name = names[RandomName(0, 20)];
+    const name = names[randomNumber(0, 20)];
     setDogInfo({ ...data, name });
     setLoading(false);
   };
@@ -64,10 +63,10 @@ export const Home = () => {
     <>
       <CardLayout
         changeDog={() => {
-          handleSaveDog(false);
+          handleFavDog(false);
         }}
         favDog={() => {
-          handleSaveDog(true);
+          handleFavDog(true);
         }}
         dogInfo={dogInfo}
       >
@@ -77,11 +76,11 @@ export const Home = () => {
           <Shadow />
           <NameContainer>
             <Name>{dogInfo.name}</Name>
-            <Age>{RandomName(5, 80)}</Age>
+            <Age>{randomNumber(5, 80)}</Age>
           </NameContainer>
           <Distance>
             <LocationIcon />
-            <span>{`${RandomName(1, 10)} kilometers away`}</span>
+            <span>{`${randomNumber(1, 10)} kilometers away`}</span>
           </Distance>
         </Container>
       </CardLayout>
