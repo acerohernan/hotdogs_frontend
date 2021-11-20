@@ -3,10 +3,9 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 const Provider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(true);
   const [userInfo, setUserInfo] = useState({});
   const [favorites, setFavorites] = useState([]);
-  console.log(userInfo);
   const value = {
     isAuth,
     favorites,
