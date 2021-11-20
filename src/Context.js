@@ -3,8 +3,16 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 const Provider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
-  const [userInfo, setUserInfo] = useState({});
+  const [isAuth, setIsAuth] = useState(true);
+  const [userInfo, setUserInfo] = useState({
+    username: "",
+    firstName: "",
+    age: "",
+    gender: "",
+    height: "",
+    birthday: "",
+    preferences: "",
+  });
   const [favorites, setFavorites] = useState([]);
   const value = {
     isAuth,

@@ -6,16 +6,13 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  h1 {
-    color: #707070;
-    margin: 20px 0 90px;
-    font-size: 1.5rem;
-    @media (min-width: 900px) {
-      margin-bottom: 130px;
-    }
-  }
+`;
+
+export const Username = styled.h1`
+  color: #707070;
+  margin: 20px 0;
+  font-size: 1.5rem;
 `;
 
 export const Buttons = styled.div`
@@ -24,12 +21,14 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  margin: 20px 0;
 `;
 
 export const Card = styled.div`
   width: 85%;
   max-width: 450px;
-  height: 70vh;
   margin: 0 auto;
   border-radius: 10px;
   background-color: #f1f1f1;
@@ -40,21 +39,16 @@ export const Card = styled.div`
   box-sizing: border-box;
   span {
     display: block;
-    margin-bottom: 5vh;
-  }
-  @media (min-width: 700px) {
-    height: 380px;
+    margin: 10px 0;
   }
 `;
 
 export const Image = styled.img`
-  position: absolute;
-  top: 70px;
-  z-index: 10;
   width: 140px;
   height: 140px;
   object-fit: cover;
   border-radius: 100%;
+  margin-bottom: 20px;
   box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, 0.35);
   :hover {
     box-shadow: none;
@@ -62,7 +56,7 @@ export const Image = styled.img`
 `;
 
 export const LinkStyledRed = styled(Link)`
-  width: 70px;
+  width: 80px;
   height: 15px;
   padding: 10px 15px;
   background-color: #f05454;
@@ -71,7 +65,7 @@ export const LinkStyledRed = styled(Link)`
   align-self: flex-start;
   margin-top: 20px;
   margin-left: 7%;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: center;
 `;
 
@@ -86,7 +80,7 @@ export const CloseButton = styled.button`
   align-self: flex-end;
   margin-top: 20px;
   margin-right: 7%;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   text-align: center;
   border: none;
 `;

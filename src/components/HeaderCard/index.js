@@ -1,17 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "@reach/router";
 
 import { AiFillFire } from "react-icons/ai";
 import { GiSevenPointedStar } from "react-icons/gi";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFillChatFill } from "react-icons/bs";
-import { Header, LinkStyled } from "./styles";
+import { Header, LinkStyled, FavsModal } from "./styles";
 
 import { Context } from "../../Context";
 
 export const HeaderCard = () => {
   const showFavs = window.location.pathname === "/favs";
-  const { userInfo } = useContext(Context);
+  const { favorites } = useContext(Context);
+
   return (
     <>
       <Header>
@@ -27,6 +28,11 @@ export const HeaderCard = () => {
           >
             <AiFillFire className={showFavs ? "" : "fire"} />
             <GiSevenPointedStar className={showFavs ? "star" : ""} />
+            {favorites.length > 0 && (
+              <FavsModal>
+                <span>{favorites.length}</span>
+              </FavsModal>
+            )}
           </LinkStyled>
           <li>
             <a href="#">

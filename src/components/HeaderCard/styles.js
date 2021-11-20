@@ -69,3 +69,23 @@ export const LinkStyled = styled(Link)`
     z-index: 10;
   }
 `;
+
+export const FavsModal = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f05454;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  opacity: 50%;
+  span {
+    font-size: 0.7rem;
+    color: white;
+  }
+`;
