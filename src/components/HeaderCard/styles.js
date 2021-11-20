@@ -6,23 +6,20 @@ export const Header = styled.div`
   height: auto;
   margin: 0 auto;
   max-width: 450px;
-  padding: 5px 0;
-  ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    align-items: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 500px) {
+    padding: 10px 20px;
+    box-sizing: border-box;
   }
 
-  li {
-    padding: 5px 15px;
-    a svg {
-      width: 25px;
-      height: 25px;
-      color: #dde0e6;
-    }
+  svg {
+    width: 25px;
+    height: 25px;
+    color: #dde0e6;
   }
   .favs::before {
     right: 0;

@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
 
 import { Link, navigate } from "@reach/router";
+import { Form } from "./styles";
+import { SignUp } from "./styles";
 
 import { Context } from "../../Context";
 
-import { Form } from "./styles";
-import { Register } from "./styles";
-
-export const UserForm = ({ title, footerMsg, login }) => {
+export const UserForm = ({ title }) => {
   const [userInfo, setUserInfo] = useState({});
   const { addUserInfo } = useContext(Context);
 
@@ -53,10 +52,10 @@ export const UserForm = ({ title, footerMsg, login }) => {
             setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
           }}
         />
-        <Register>
-          {footerMsg} <Link to="/register">{login ? "Register" : "Login"}</Link>
-        </Register>
-        <button type="submit">{login ? "LOGIN" : "REGISTER"}</button>
+        <SignUp>
+          Do you have an acount? <Link to="/SignUp">Sign up</Link>
+        </SignUp>
+        <button type="submit">Sign up</button>
       </Form>
     </>
   );

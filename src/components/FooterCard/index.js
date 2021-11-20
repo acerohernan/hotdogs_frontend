@@ -1,28 +1,27 @@
 import React, { useContext } from "react";
-import { Footer } from "./styles";
-
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
 import { MdFavorite as FavIcon } from "react-icons/md";
 
+import { Footer, Button } from "./styles";
 import { Context } from "../../Context";
 
 export const FooterCard = ({ changeDog, favDog, dogInfo }) => {
   const { addFavorites } = useContext(Context);
 
+  const handleFavDog = () => {
+    addFavorites(dogInfo);
+    favDog();
+  };
+
   return (
     <>
       <Footer>
-        <button onClick={changeDog}>
+        <Button onClick={changeDog}>
           <CloseIcon />
-        </button>
-        <button
-          onClick={() => {
-            addFavorites(dogInfo);
-            favDog();
-          }}
-        >
+        </Button>
+        <Button onClick={handleFavDog}>
           <FavIcon />
-        </button>
+        </Button>
       </Footer>
     </>
   );

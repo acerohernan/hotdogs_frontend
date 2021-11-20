@@ -69,7 +69,7 @@ export const Form = styled.form`
   }
 `;
 
-export const Register = styled.span`
+export const SignUp = styled.span`
   font-size: 0.9rem;
   margin-top: 15px;
 `;
