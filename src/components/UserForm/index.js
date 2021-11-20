@@ -7,7 +7,7 @@ import { Context } from "../../Context";
 import { Form } from "./styles";
 import { Register } from "./styles";
 
-export const UserForm = ({ submitInfo, title, footerMsg, login }) => {
+export const UserForm = ({ title, footerMsg, login }) => {
   const [userInfo, setUserInfo] = useState({});
   const { addUserInfo } = useContext(Context);
 

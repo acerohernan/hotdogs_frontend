@@ -8,7 +8,6 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
   @media (max-width: 600px) {
     width: 100%;

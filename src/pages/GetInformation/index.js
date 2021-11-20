@@ -7,12 +7,13 @@ import { Context } from "../../Context";
 export const GetInformation = () => {
   const [accountInfo, setAccountInfo] = useState({});
   const { userInfo, addUserInfo, activateAuth } = useContext(Context);
+
   const handleInputChange = (e) => {
     setAccountInfo({ ...accountInfo, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
-    addUserInfo({ ...userInfo, accountInfo });
+    addUserInfo({ ...userInfo, ...accountInfo });
     activateAuth();
   };
   return (

@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../Context";
-
 import {
   Container,
   Image,
@@ -11,10 +9,13 @@ import {
   Buttons,
 } from "./styles";
 
+import { Context } from "../../Context";
+
 export const Account = () => {
   const { userInfo, inactivateAuth } = useContext(Context);
-  const { username, accountInfo } = userInfo;
-  const { firstName, age, gender, height, birthday, preferences } = accountInfo;
+  const { username, firstName, age, gender, height, birthday, preferences } =
+    userInfo;
+
   return (
     <Container>
       <h1>{`@${username}`}</h1>
