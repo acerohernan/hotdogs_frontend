@@ -10,7 +10,7 @@ export const Register = () => {
         src="https://image.freepik.com/vector-gratis/perro-mascota-cara-tazon-rojo-lleno-alimentos_3446-320.jpg"
         alt="img"
       />
-      <UserForm title="REGISTER" footerMsg="Do you have an account?" register />
+      <UserForm title="SIGN UP" />
     </RegisterContainer>
   );
 };

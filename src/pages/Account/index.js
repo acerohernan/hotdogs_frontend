@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import {
   Container,
+  Username,
   Image,
   Card,
   CloseButton,
@@ -18,7 +19,7 @@ export const Account = () => {
 
   return (
     <Container>
-      <h1>{`@${username}`}</h1>
+      <Username>{`@${username}`}</Username>
       <Image src="https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png" />
       <Card>
         <span>{`First Name: ${firstName}`}</span>

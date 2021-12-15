@@ -14,7 +14,6 @@ export const Favs = () => {
       <Icon />
       <Container>
         {favorites.map((fav) => {
-          console.log(favorites);
           const { id, url } = fav;
           return (
             <Link to={`/details/${id}`} key={id}>

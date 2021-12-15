@@ -6,23 +6,20 @@ export const Header = styled.div`
   height: auto;
   margin: 0 auto;
   max-width: 450px;
-  padding: 5px 0;
-  ul {
-    display: flex;
-    list-style: none;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    align-items: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 500px) {
+    padding: 10px 20px;
+    box-sizing: border-box;
   }
 
-  li {
-    padding: 5px 15px;
-    a svg {
-      width: 25px;
-      height: 25px;
-      color: #dde0e6;
-    }
+  svg {
+    width: 25px;
+    height: 25px;
+    color: #dde0e6;
   }
   .favs::before {
     right: 0;
@@ -67,5 +64,25 @@ export const LinkStyled = styled(Link)`
     align-self: center;
     position: relative;
     z-index: 10;
+  }
+`;
+
+export const FavsModal = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f05454;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  opacity: 50%;
+  span {
+    font-size: 0.7rem;
+    color: white;
   }
 `;
