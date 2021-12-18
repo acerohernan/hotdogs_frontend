@@ -17,7 +17,6 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 30%;
   height: 120px;
   object-fit: cover;
   border-radius: 8px;
@@ -27,10 +26,15 @@ export const Image = styled.img`
   overflow: hidden;
   position: relative;
   width: 31.33%;
+  transition: 0.5 all ease-in-out;
   &:after {
     content: "";
     display: block;
     padding-bottom: 100%;
+  }
+
+  &:hover {
+    transform: scale(110%);
   }
 `;
 

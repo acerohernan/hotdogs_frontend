@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html{
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   ul{

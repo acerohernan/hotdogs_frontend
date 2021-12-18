@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { navigate } from "@reach/router";
 
+import { FaDog as DogIcon } from "react-icons/fa";
+import { GiDogHouse } from "react-icons/gi";
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
 import { MdFavorite as FavoriteIcon } from "react-icons/md";
 import {
@@ -29,15 +31,21 @@ export const Details = () => {
   const { url } = dog;
 
   return (
-    <Container className="animate__animated animate__fadeInUpBig">
+    <Container>
       <Image src={url} />
       <Information>
         <MainInfo>
           <h1>{names[randomNumber(0, 20)]}</h1>
           <span>17</span>
         </MainInfo>
-        <ExtraInfo>Pitbull</ExtraInfo>
-        <ExtraInfo>11 km away</ExtraInfo>
+        <ExtraInfo>
+          <DogIcon />
+          Pitbull
+        </ExtraInfo>
+        <ExtraInfo>
+          <GiDogHouse />
+          11 km away
+        </ExtraInfo>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
           expedita quas repellat tenetur..
