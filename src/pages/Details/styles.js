@@ -53,6 +53,9 @@ export const MainInfo = styled.div`
 export const ExtraInfo = styled.span`
   margin-left: 10px;
   margin-top: 5px;
+  svg {
+    margin: 0 5px;
+  }
 `;
 
 export const ButtonContainer = styled.div`

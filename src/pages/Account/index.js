@@ -1,6 +1,14 @@
 import React, { useContext } from "react";
 
 import {
+  GiSittingDog as FirstNameIcon,
+  GiJumpingDog,
+  GiBodyHeight,
+  GiDogBowl,
+} from "react-icons/gi";
+import { FaTransgender, FaBirthdayCake } from "react-icons/fa";
+
+import {
   Container,
   Username,
   Image,
@@ -22,12 +30,30 @@ export const Account = () => {
       <Username>{`@${username}`}</Username>
       <Image src="https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png" />
       <Card>
-        <span>{`First Name: ${firstName}`}</span>
-        <span>{`Age: ${age}`}</span>
-        <span>{`Gender: ${gender}`}</span>
-        <span>{`Height: ${height}`}</span>
-        <span>{`Birthday: ${birthday}`}</span>
-        <span>{`Preferences: ${preferences}`}</span>
+        <span>
+          <FirstNameIcon />
+          {`First Name: ${firstName}`}
+        </span>
+        <span>
+          <GiJumpingDog />
+          {`Age: ${age}`}
+        </span>
+        <span>
+          <FaTransgender />
+          {`Gender: ${gender}`}
+        </span>
+        <span>
+          <GiBodyHeight />
+          {`Height: ${height}`}
+        </span>
+        <span>
+          <FaBirthdayCake />
+          {`Birthday: ${birthday}`}
+        </span>
+        <span>
+          <GiDogBowl />
+          {`Preferences: ${preferences}`}
+        </span>
       </Card>
       <Buttons>
         <LinkStyledRed to="/home">Back to home</LinkStyledRed>

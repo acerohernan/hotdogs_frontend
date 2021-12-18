@@ -38,8 +38,12 @@ export const Card = styled.div`
   padding: 20px;
   box-sizing: border-box;
   span {
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 10px 0;
+    svg {
+      margin: 0 5px;
+    }
   }
 `;
 
@@ -65,7 +69,7 @@ export const LinkStyledRed = styled(Link)`
   align-self: flex-start;
   margin-top: 20px;
   margin-left: 7%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
 `;
 
