@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Router>
+      <Router basepath="/hot-dogs">
         <Home path="/" />
         <Favs path="/favs" />
         <Details path="/details/:dogId" />
