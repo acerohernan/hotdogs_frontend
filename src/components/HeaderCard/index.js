@@ -3,9 +3,7 @@ import { Link } from "@reach/router";
 
 import { AiFillFire as FireIcon } from "react-icons/ai";
 import { GiSevenPointedStar as StarIcon } from "react-icons/gi";
-import { FaUserAlt as UserIcon } from "react-icons/fa";
-import { BsFillChatFill as ChatIcon } from "react-icons/bs";
-import { Header, LinkStyled, FavsModal } from "./styles";
+import { Header, LinkStyled, FavsModal, UserIcon, ChatIcon } from "./styles";
 
 import { Context } from "../../Context";
 

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Link } from "@reach/router";
+import { FaUserAlt } from "react-icons/fa";
+import { BsFillChatFill } from "react-icons/bs";
 
 export const Header = styled.div`
   width: 100%;
@@ -19,11 +21,7 @@ export const Header = styled.div`
   svg {
     width: 25px;
     height: 25px;
-    color: #dde0e6;
     transition: 0.3s all ease-in-out;
-    :hover {
-      transform: scale(120%);
-    }
   }
   .favs::before {
     right: 0;
@@ -88,5 +86,19 @@ export const FavsModal = styled.div`
   span {
     font-size: 0.7rem;
     color: white;
+  }
+`;
+
+export const UserIcon = styled(FaUserAlt)`
+  color: #cdd0cb;
+  :hover {
+    color: gray;
+  }
+`;
+
+export const ChatIcon = styled(BsFillChatFill)`
+  color: #cdd0cb;
+  :hover {
+    color: gray;
   }
 `;

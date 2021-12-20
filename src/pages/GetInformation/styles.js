@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
 export const InfoContainer = styled.div`
-  width: 40%;
+  width: 100%;
+  max-width: 480px;
   margin: 0 auto;
-  height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  @media (max-width: 600px) {
-    width: 100%;
-    box-shadow: none;
-    height: 140vh;
-  }
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
 `;
 
 export const Image = styled.img`
@@ -39,13 +37,11 @@ export const Form = styled.form`
     color: gray;
   }
   input {
-    max-width: 350px;
     width: 80%;
-    height: 40px;
     margin-top: 20px;
     border: none;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 20px 10px;
     font-size: 0.9rem;
     font-weight: 400;
     background-color: #e7e7de;
@@ -65,29 +61,5 @@ export const Form = styled.form`
     font-size: 1rem;
     font-weight: 500;
     margin: 40px 0 20px;
-  }
-  @media (min-width: 900px) {
-    height: 650px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 10px;
-    h1 {
-      font-size: 2rem;
-      margin: 10px 0 10px;
-    }
-    input {
-      height: 60px;
-      width: 80%;
-      font-size: 0.9rem;
-    }
-    button {
-      margin-top: 25px;
-      height: 70px;
-      width: 140px;
-      font-size: 0.9rem;
-    }
-    span {
-      font-size: 1rem;
-    }
   }
 `;

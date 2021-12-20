@@ -12,7 +12,7 @@ export const Container = styled.div`
     display: none;
   }
   @media (min-width: 600px) {
-    height: 445px;
+    height: auto;
   }
 `;
 

@@ -9,22 +9,31 @@ export const Footer = styled.footer`
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+    background-color: white;
+    transition: 0.2s all ease-in-out;
+    box-shadow: 5px 4px 27px -8px rgba(0, 0, 0, 0.3);
+    :hover {
+      transform: scale(110%);
+    }
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
-export const Button = styled.button`
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  padding: 5px;
-  cursor: pointer;
-  outline: none;
-  svg {
-    width: 25px;
-    height: 25px;
-  }
-  :hover {
-    background-color: #f05454;
-    color: white;
-  }
+export const CloseButton = styled.button`
+  color: #6f9eaf;
+`;
+
+export const FavButton = styled.button`
+  color: #f05454;
 `;

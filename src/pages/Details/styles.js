@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  max-width: 487px;
+  max-width: 480px;
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
 `;
 
 export const Image = styled.img`

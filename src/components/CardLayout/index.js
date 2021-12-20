@@ -11,6 +11,10 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 60px auto 80px;
+  border: 1px solid #d3d3d3;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 5px;
 `;
 
 export const CardLayout = ({ children, changeDog, favDog, dogInfo }) => {

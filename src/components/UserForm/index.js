@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 
 import { Link, navigate } from "@reach/router";
 import { Form } from "./styles";
-import { SignUp } from "./styles";
+import { Title, Input, Button, SignUp, Buttons, LinkStyled } from "./styles";
 
 import { Context } from "../../Context";
 
@@ -19,8 +19,8 @@ export const UserForm = ({ title }) => {
   return (
     <>
       <Form>
-        <h1>{title}</h1>
-        <input
+        <Title>{title}</Title>
+        <Input
           required
           type="text"
           placeholder="Username"
@@ -34,7 +34,7 @@ export const UserForm = ({ title }) => {
             });
           }}
         />
-        <input
+        <Input
           required
           type="email"
           placeholder="Email"
@@ -43,7 +43,7 @@ export const UserForm = ({ title }) => {
             setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
           }}
         />
-        <input
+        <Input
           required
           type="password"
           placeholder="Password"
@@ -52,12 +52,16 @@ export const UserForm = ({ title }) => {
             setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
           }}
         />
+
         <SignUp>
           Do you have an acount? <Link to="/SignUp">Sign up</Link>
         </SignUp>
-        <button onClick={handleSubmit} type="submit">
-          Sign up
-        </button>
+        <Buttons>
+          <Button onClick={handleSubmit} type="submit">
+            Sign up
+          </Button>
+          <LinkStyled to="/">Back to home</LinkStyled>
+        </Buttons>
       </Form>
     </>
   );

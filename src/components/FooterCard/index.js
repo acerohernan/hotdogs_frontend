@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
 import { MdFavorite as FavIcon } from "react-icons/md";
 
-import { Footer, Button } from "./styles";
+import { Footer, CloseButton, FavButton } from "./styles";
 import { Context } from "../../Context";
 
 export const FooterCard = ({ changeDog, favDog, dogInfo }) => {
@@ -16,12 +16,12 @@ export const FooterCard = ({ changeDog, favDog, dogInfo }) => {
   return (
     <>
       <Footer>
-        <Button onClick={changeDog}>
+        <CloseButton onClick={changeDog}>
           <CloseIcon />
-        </Button>
-        <Button onClick={handleFavDog}>
+        </CloseButton>
+        <FavButton onClick={handleFavDog}>
           <FavIcon />
-        </Button>
+        </FavButton>
       </Footer>
     </>
   );

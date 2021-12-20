@@ -23,7 +23,7 @@ export const GetInformation = () => {
     <InfoContainer>
       <Image src="https://image.freepik.com/vector-gratis/mejor-amigo-simbolo-perro-mascota-cara-cinta-roja_3446-319.jpg" />
       <Form onSubmit={handleSubmit}>
-        <h1>CREATE DOG ACCOUNT</h1>
+        <h1>CREATE A DOG ACCOUNT</h1>
         <input
           required
           type="text"
