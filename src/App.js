@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Router } from "@reach/router";
 
-import { Context } from "./Context";
 import { Home } from "./pages/Home";
 import { Favs } from "./pages/Favs";
 import { Account } from "./pages/Account";
@@ -13,8 +12,6 @@ import { SingIn } from "./pages/SignIn";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
-  const { isAuth } = useContext(Context);
-
   return (
     <>
       <GlobalStyles />
