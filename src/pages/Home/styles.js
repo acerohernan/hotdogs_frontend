@@ -5,7 +5,6 @@ export const Container = styled.div`
   position: relative;
   width: 95%;
   max-width: 450px;
-  height: 73vh;
   margin: 10px auto;
   display: flex;
   justify-content: flex-end;
@@ -19,9 +18,6 @@ export const Container = styled.div`
     left: 0;
     height: 100%;
     margin: 0 auto;
-  }
-  @media (min-width: 600px) {
-    height: 77vh;
   }
 `;
 export const Shadow = styled.div`

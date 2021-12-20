@@ -56,7 +56,7 @@ export const Account = () => {
         </span>
       </Card>
       <Buttons>
-        <LinkStyledRed to="/home">Back to home</LinkStyledRed>
+        <LinkStyledRed to="/">Back to home</LinkStyledRed>
         <CloseButton
           onClick={() => {
             inactivateAuth();

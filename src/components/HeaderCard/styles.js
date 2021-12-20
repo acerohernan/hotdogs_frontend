@@ -20,6 +20,10 @@ export const Header = styled.div`
     width: 25px;
     height: 25px;
     color: #dde0e6;
+    transition: 0.3s all ease-in-out;
+    :hover {
+      transform: scale(120%);
+    }
   }
   .favs::before {
     right: 0;

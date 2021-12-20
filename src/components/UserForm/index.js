@@ -18,7 +18,7 @@ export const UserForm = ({ title }) => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <h1>{title}</h1>
         <input
           required
@@ -55,7 +55,9 @@ export const UserForm = ({ title }) => {
         <SignUp>
           Do you have an acount? <Link to="/SignUp">Sign up</Link>
         </SignUp>
-        <button type="submit">Sign up</button>
+        <button onClick={handleSubmit} type="submit">
+          Sign up
+        </button>
       </Form>
     </>
   );

@@ -11,16 +11,16 @@ import { Context } from "../../Context";
 
 export const HeaderCard = () => {
   const showFavs = window.location.pathname === "/favs";
-  const { favorites } = useContext(Context);
+  const { favorites, isAuth } = useContext(Context);
 
   return (
     <Header>
-      <Link to={`/account`}>
+      <Link to={isAuth ? "/account" : "/register"}>
         <UserIcon />
       </Link>
       <LinkStyled
         className={showFavs ? "favs" : ""}
-        to={showFavs ? "/home" : "/favs"}
+        to={showFavs ? "/" : "/favs"}
       >
         <FireIcon className={showFavs ? "" : "fire"} />
         <StarIcon className={showFavs ? "star" : ""} />
@@ -30,7 +30,7 @@ export const HeaderCard = () => {
           </FavsModal>
         )}
       </LinkStyled>
-      <Link to="/home">
+      <Link to={isAuth ? "/" : "/register"}>
         <ChatIcon />
       </Link>
     </Header>

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { navigate } from "@reach/router";
 
 import { InfoContainer, Image, Form } from "./styles";
 
@@ -12,9 +13,11 @@ export const GetInformation = () => {
     setAccountInfo({ ...accountInfo, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     addUserInfo({ ...userInfo, ...accountInfo });
     activateAuth();
+    navigate("/");
   };
   return (
     <InfoContainer>
