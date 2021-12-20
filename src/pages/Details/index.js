@@ -20,7 +20,7 @@ import { Context } from "../../Context";
 
 export const Details = () => {
   const { favorites, removeFavorite } = useContext(Context);
-  const id = window.location.pathname.replace("/details/", "");
+  const id = window.location.pathname.replace("/hot-dogs/details/", "");
 
   const arrDog = favorites.filter((fav) => fav.id === id)[0];
   let dog = {};
@@ -31,7 +31,7 @@ export const Details = () => {
 
   const handleDeleteFav = () => {
     removeFavorite(dog);
-    navigate("/favs");
+    navigate("/hot-dogs/favs");
   };
 
   return (
@@ -56,7 +56,7 @@ export const Details = () => {
         </p>
       </Information>
       <ButtonContainer>
-        <LinkStyled to="/favs">
+        <LinkStyled to="/hot-dogs/favs">
           <CloseIcon />
         </LinkStyled>
         <Button onClick={handleDeleteFav}>

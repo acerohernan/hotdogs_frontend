@@ -17,7 +17,7 @@ export const GetInformation = () => {
     event.preventDefault();
     addUserInfo({ ...userInfo, ...accountInfo });
     activateAuth();
-    navigate("/");
+    navigate("/hot-dogs/");
   };
   return (
     <InfoContainer>

@@ -8,17 +8,17 @@ import { Header, LinkStyled, FavsModal, UserIcon, ChatIcon } from "./styles";
 import { Context } from "../../Context";
 
 export const HeaderCard = () => {
-  const showFavs = window.location.pathname === "/favs";
+  const showFavs = window.location.pathname === "/hot-dogs/favs";
   const { favorites, isAuth } = useContext(Context);
 
   return (
     <Header>
-      <Link to={isAuth ? "/account" : "/signup"}>
+      <Link to={isAuth ? "/hot-dogs/account" : "/hot-dogs/signup"}>
         <UserIcon />
       </Link>
       <LinkStyled
         className={showFavs ? "favs" : ""}
-        to={showFavs ? "/" : "/favs"}
+        to={showFavs ? "/hot-dogs/" : "/hot-dogs/favs"}
       >
         <FireIcon className={showFavs ? "" : "fire"} />
         <StarIcon className={showFavs ? "star" : ""} />
@@ -28,7 +28,7 @@ export const HeaderCard = () => {
           </FavsModal>
         )}
       </LinkStyled>
-      <Link to={isAuth ? "/" : "/signup"}>
+      <Link to={isAuth ? "/hot-dogs/" : "/hot-dogs/signup"}>
         <ChatIcon />
       </Link>
     </Header>

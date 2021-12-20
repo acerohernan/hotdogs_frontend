@@ -16,7 +16,7 @@ export const Favs = () => {
         {favorites.map((fav) => {
           const { id, url } = fav;
           return (
-            <Link to={`/details/${id}`} key={id}>
+            <Link to={`/hot-dogs/details/${id}`} key={id}>
               <Image src={url} />
             </Link>
           );

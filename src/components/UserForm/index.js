@@ -13,7 +13,7 @@ export const UserForm = ({ title, signup }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addUserInfo(userInfo);
-    navigate("/information");
+    navigate("/hot-dogs/information");
   };
 
   const handleInputChange = (event) => {
@@ -53,8 +53,8 @@ export const UserForm = ({ title, signup }) => {
       />
       <SignUp>
         Do you have an acount?
-        {signup && <Link to="/signin">Sign in</Link>}
-        {!signup && <Link to="/signup">Sign up</Link>}
+        {signup && <Link to="/hot-dogs/signin">Sign in</Link>}
+        {!signup && <Link to="/hot-dogs/signup">Sign up</Link>}
       </SignUp>
       <Buttons>
         {signup && (
@@ -67,7 +67,7 @@ export const UserForm = ({ title, signup }) => {
             Sign in
           </Button>
         )}
-        <LinkStyled to="/">Back to home</LinkStyled>
+        <LinkStyled to="/hot-dogs/">Back to home</LinkStyled>
       </Buttons>
     </Form>
   );

@@ -19,11 +19,17 @@ import {
 } from "./styles";
 
 import { Context } from "../../Context";
+import { navigate } from "@reach/router";
 
 export const Account = () => {
   const { userInfo, inactivateAuth } = useContext(Context);
   const { username, firstName, age, gender, height, birthday, preferences } =
     userInfo;
+
+  const handleCloseSession = () => {
+    inactivateAuth();
+    navigate("/hot-dogs/");
+  };
 
   return (
     <Container>
@@ -56,14 +62,8 @@ export const Account = () => {
         </span>
       </Card>
       <Buttons>
-        <LinkStyledRed to="/">Back to home</LinkStyledRed>
-        <CloseButton
-          onClick={() => {
-            inactivateAuth();
-          }}
-        >
-          Close Session
-        </CloseButton>
+        <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
+        <CloseButton onClick={handleCloseSession}>Close Session</CloseButton>
       </Buttons>
     </Container>
   );
