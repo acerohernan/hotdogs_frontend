@@ -22,6 +22,7 @@ export const Favs = () => {
           );
         })}
       </FavsContainer>
+      {favorites.lenght < 1 && <h3>Let´s checks some dogs</h3>}
     </Container>
   );
 };

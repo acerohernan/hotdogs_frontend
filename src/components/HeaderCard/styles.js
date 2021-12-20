@@ -7,8 +7,8 @@ export const Header = styled.div`
   width: 100%;
   height: auto;
   margin: 0 auto;
-  max-width: 450px;
-  padding: 10px 0;
+  box-sizing: border-box;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;

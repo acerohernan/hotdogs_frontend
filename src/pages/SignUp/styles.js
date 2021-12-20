@@ -9,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
-  max-width: 480px;
+  max-width: 600px;
   box-sizing: border-box;
   @media (max-width: 600px) {
     width: 100%;

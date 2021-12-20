@@ -4,7 +4,7 @@ export const Container = styled.div`
   overflow: hidden;
   position: relative;
   width: 95%;
-  max-width: 450px;
+  max-width: 580px;
   margin: 10px auto;
   display: flex;
   justify-content: flex-end;

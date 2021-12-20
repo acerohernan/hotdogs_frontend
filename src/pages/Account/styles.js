@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  max-width: 480px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;

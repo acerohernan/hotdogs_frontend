@@ -4,7 +4,7 @@ import MatchIcon from "../../assets/static/MatchIcon";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  max-width: 480px;
+  max-width: 600px;
   margin: 0 auto;
   border: 1px solid #dedede;
   border-radius: 5px;

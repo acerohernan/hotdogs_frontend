@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InfoContainer = styled.div`
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   margin: 0 auto;
   height: 100vh;
   display: flex;
