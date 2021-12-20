@@ -13,7 +13,7 @@ export const HeaderCard = () => {
 
   return (
     <Header>
-      <Link to={isAuth ? "/account" : "/register"}>
+      <Link to={isAuth ? "/account" : "/signup"}>
         <UserIcon />
       </Link>
       <LinkStyled
@@ -28,7 +28,7 @@ export const HeaderCard = () => {
           </FavsModal>
         )}
       </LinkStyled>
-      <Link to={isAuth ? "/" : "/register"}>
+      <Link to={isAuth ? "/" : "/signup"}>
         <ChatIcon />
       </Link>
     </Header>

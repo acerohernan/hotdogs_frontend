@@ -63,10 +63,10 @@ export const Home = () => {
     <>
       <CardLayout
         changeDog={() => {
-          handleFavDog(false);
+          handleFavDog(true);
         }}
         favDog={() => {
-          handleFavDog(true);
+          handleFavDog(false);
         }}
         dogInfo={dogInfo}
       >

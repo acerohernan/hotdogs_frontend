@@ -66,6 +66,10 @@ export const LinkStyled = styled(Link)`
     align-self: center;
     position: relative;
     z-index: 10;
+    transition: 0.3s all ease-in-out;
+    :hover {
+      transform: scale(125%);
+    }
   }
 `;
 

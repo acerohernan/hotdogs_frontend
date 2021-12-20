@@ -15,6 +15,7 @@ const Container = styled.div`
   max-width: 480px;
   margin: 0 auto;
   border-radius: 5px;
+  overflow: hidden;
 `;
 
 export const CardLayout = ({ children, changeDog, favDog, dogInfo }) => {

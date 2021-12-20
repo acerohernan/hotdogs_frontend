@@ -27,7 +27,7 @@ export const Account = () => {
 
   return (
     <Container>
-      <Username>{`@${username}`}</Username>
+      <Username>{`@${username ? username : "username"}`}</Username>
       <Image src="https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png" />
       <Card>
         <span>

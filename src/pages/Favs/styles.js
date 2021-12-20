@@ -2,11 +2,23 @@ import styled from "styled-components";
 import MatchIcon from "../../assets/static/MatchIcon";
 
 export const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 75px 1fr;
+`;
+
+export const FavsContainer = styled.div`
   padding: 15px;
   position: relative;
-  margin: 0 auto;
   max-width: 450px;
-  height: 377px;
+  border-radius: 5px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     display: none;

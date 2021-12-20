@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 
 const Provider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
   const [userInfo, setUserInfo] = useState({
     username: "",
     firstName: "",
@@ -20,6 +20,11 @@ const Provider = ({ children }) => {
     userInfo,
     addFavorites: (fav) => {
       setFavorites([...favorites, fav]);
+    },
+    removeFavorite: (fav) => {
+      const newArr = favorites.filter((dog) => dog.id !== fav.id);
+
+      setFavorites(newArr);
     },
     activateAuth: () => {
       setIsAuth(true);

@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 
 import { Context } from "../../Context";
-import { HeaderCard } from "../HeaderCard/index";
+import { HeaderCard } from "../../components/HeaderCard/index";
 import { Link } from "@reach/router";
-import { Container, Image, Icon } from "./styles";
+import { Container, FavsContainer, Image, Icon } from "./styles";
 
 export const Favs = () => {
   const { favorites } = useContext(Context);
 
   return (
-    <>
+    <Container>
       <HeaderCard />
       <Icon />
-      <Container>
+      <FavsContainer>
         {favorites.map((fav) => {
           const { id, url } = fav;
           return (
@@ -21,7 +21,7 @@ export const Favs = () => {
             </Link>
           );
         })}
-      </Container>
-    </>
+      </FavsContainer>
+    </Container>
   );
 };

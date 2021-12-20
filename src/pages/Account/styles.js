@@ -11,6 +11,7 @@ export const Container = styled.div`
   border-radius: 5px;
   border: 1px solid #d3d3d3;
   margin: 0 auto;
+  box-sizing: border-box;
 `;
 
 export const Username = styled.h1`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "@reach/router";
 
 export const Container = styled.div`
   width: 100%;
@@ -7,15 +8,16 @@ export const Container = styled.div`
   margin: 0 auto;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 1fr 80px;
 `;
 
 export const Image = styled.img`
   width: 100%;
-  height: 250px;
+  height: 300px;
   object-fit: cover;
-  @media (min-width: 600px) {
-    height: 300px;
-  }
 `;
 
 export const Information = styled.div`
@@ -60,14 +62,9 @@ export const ExtraInfo = styled.span`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 15px;
-  width: 200px;
   display: flex;
   align-self: center;
-  justify-content: space-between;
-  @media (min-width: 600px) {
-    margin-top: 60px;
-  }
+  justify-content: center;
 `;
 export const Button = styled.button`
   width: 50px;
@@ -75,8 +72,33 @@ export const Button = styled.button`
   border: none;
   border-radius: 50%;
   padding: 5px;
+  margin: 0 10px;
   cursor: pointer;
   outline: none;
+  transition: 0.3s all ease-in-out;
+  :hover {
+    transform: scale(125%);
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+`;
+
+export const LinkStyled = styled(Link)`
+  width: 50px;
+  height: 50px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  border-radius: 50%;
+  transition: 0.3s all ease-in-out;
+  :hover {
+    transform: scale(125%);
+  }
   svg {
     width: 25px;
     height: 25px;

@@ -39,6 +39,9 @@ export const Input = styled.input`
 export const SignUp = styled.span`
   font-size: 0.9rem;
   margin-top: 15px;
+  a {
+    margin-left: 5px;
+  }
 `;
 
 export const Buttons = styled.div`
@@ -58,7 +61,7 @@ export const Button = styled.button`
   color: white;
   font-weight: 400;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   height: 100%;
 `;
 
@@ -69,5 +72,5 @@ export const LinkStyled = styled(Link)`
   color: white;
   font-weight: 400;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 `;

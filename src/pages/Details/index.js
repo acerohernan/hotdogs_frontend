@@ -4,7 +4,7 @@ import { navigate } from "@reach/router";
 import { FaDog as DogIcon } from "react-icons/fa";
 import { GiDogHouse } from "react-icons/gi";
 import { AiOutlineClose as CloseIcon } from "react-icons/ai";
-import { MdFavorite as FavoriteIcon } from "react-icons/md";
+import { BsTrash as DeleteIcon } from "react-icons/bs";
 import {
   Container,
   Image,
@@ -13,14 +13,13 @@ import {
   ExtraInfo,
   ButtonContainer,
   Button,
+  LinkStyled,
 } from "./styles";
 
 import { Context } from "../../Context";
-import { names } from "../../names.json";
-import randomNumber from "../../utils/randomNumber";
 
 export const Details = () => {
-  const { favorites } = useContext(Context);
+  const { favorites, removeFavorite } = useContext(Context);
   const id = window.location.pathname.replace("/details/", "");
 
   const arrDog = favorites.filter((fav) => fav.id === id)[0];
@@ -28,14 +27,19 @@ export const Details = () => {
   if (arrDog !== undefined) {
     dog = arrDog;
   }
-  const { url } = dog;
+  const { url, name } = dog;
+
+  const handleDeleteFav = () => {
+    removeFavorite(dog);
+    navigate("/favs");
+  };
 
   return (
     <Container>
       <Image src={url} />
       <Information>
         <MainInfo>
-          <h1>{names[randomNumber(0, 20)]}</h1>
+          <h1>{name}</h1>
           <span>17</span>
         </MainInfo>
         <ExtraInfo>
@@ -50,19 +54,15 @@ export const Details = () => {
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
           expedita quas repellat tenetur..
         </p>
-        <ButtonContainer>
-          <Button
-            onClick={() => {
-              navigate("/favs");
-            }}
-          >
-            <CloseIcon />
-          </Button>
-          <Button>
-            <FavoriteIcon />
-          </Button>
-        </ButtonContainer>
       </Information>
+      <ButtonContainer>
+        <LinkStyled to="/favs">
+          <CloseIcon />
+        </LinkStyled>
+        <Button onClick={handleDeleteFav}>
+          <DeleteIcon />
+        </Button>
+      </ButtonContainer>
     </Container>
   );
 };
