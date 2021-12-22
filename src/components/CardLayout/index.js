@@ -18,12 +18,18 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-export const CardLayout = ({ children, changeDog, favDog, dogInfo }) => {
+export const CardLayout = ({
+  children,
+  changeDog,
+  favDog,
+  favorites,
+  isAuth,
+}) => {
   return (
     <Container>
-      <HeaderCard />
+      <HeaderCard isAuth={isAuth} favorites={favorites} />
       {children}
-      <FooterCard changeDog={changeDog} favDog={favDog} dogInfo={dogInfo} />
+      <FooterCard changeDog={changeDog} favDog={favDog} />
     </Container>
   );
 };

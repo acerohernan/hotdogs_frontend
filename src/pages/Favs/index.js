@@ -1,16 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-import { Context } from "../../Context";
 import { HeaderCard } from "../../components/HeaderCard/index";
 import { Link } from "@reach/router";
 import { Container, FavsContainer, Image, Icon } from "./styles";
 
-export const Favs = () => {
-  const { favorites } = useContext(Context);
-
+const Favs = ({ favorites }) => {
   return (
     <Container>
-      <HeaderCard />
+      <HeaderCard favorites={favorites} />
       <Icon />
       <FavsContainer>
         {favorites.map((fav) => {
@@ -26,3 +24,9 @@ export const Favs = () => {
     </Container>
   );
 };
+
+const mapStateToProps = (state) => ({
+  favorites: state.favs,
+});
+
+export default connect(mapStateToProps)(Favs);

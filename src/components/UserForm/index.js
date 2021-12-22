@@ -1,14 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { Link, navigate } from "@reach/router";
 import { Form } from "./styles";
 import { Title, Input, Button, SignUp, Buttons, LinkStyled } from "./styles";
 
-import { Context } from "../../Context";
-
-export const UserForm = ({ title, signup }) => {
+export const UserForm = ({ title, signup, addUserInfo }) => {
   const [userInfo, setUserInfo] = useState({});
-  const { addUserInfo } = useContext(Context);
 
   const handleSubmit = (event) => {
     event.preventDefault();

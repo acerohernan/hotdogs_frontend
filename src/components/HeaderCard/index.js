@@ -1,15 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "@reach/router";
 
 import { AiFillFire as FireIcon } from "react-icons/ai";
 import { GiSevenPointedStar as StarIcon } from "react-icons/gi";
 import { Header, LinkStyled, FavsModal, UserIcon, ChatIcon } from "./styles";
 
-import { Context } from "../../Context";
-
-export const HeaderCard = () => {
+export const HeaderCard = ({ isAuth, favorites }) => {
   const showFavs = window.location.pathname === "/hot-dogs/favs";
-  const { favorites, isAuth } = useContext(Context);
 
   return (
     <Header>

@@ -17,7 +17,7 @@ export const Container = styled.div`
 export const FavsContainer = styled.div`
   padding: 15px;
   position: relative;
-  max-width: 450px;
+  max-width: 580px;
   border-radius: 5px;
   overflow-y: scroll;
   ::-webkit-scrollbar {

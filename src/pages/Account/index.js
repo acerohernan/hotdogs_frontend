@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import {
   GiSittingDog as FirstNameIcon,
@@ -18,11 +18,12 @@ import {
   Buttons,
 } from "./styles";
 
-import { Context } from "../../Context";
 import { navigate } from "@reach/router";
+import { connect } from "react-redux";
 
-export const Account = () => {
-  const { userInfo, inactivateAuth } = useContext(Context);
+import { inactivateAuthAction } from "../../store/actions";
+
+const Account = ({ inactivateAuth, userInfo }) => {
   const { username, firstName, age, gender, height, birthday, preferences } =
     userInfo;
 
@@ -68,3 +69,13 @@ export const Account = () => {
     </Container>
   );
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  inactivateAuth: () => dispatch(inactivateAuthAction()),
+});
+
+const mapStateToProps = (state) => ({
+  userInfo: state.user.userInfo,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Account);

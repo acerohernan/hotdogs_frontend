@@ -1,19 +1,21 @@
 import React from "react";
 import { Router } from "@reach/router";
+import { Provider } from "react-redux";
+import store from "./store";
 
-import { Home } from "./pages/Home";
-import { Favs } from "./pages/Favs";
-import { Account } from "./pages/Account";
-import { Details } from "./pages/Details";
-import { GetInformation } from "./pages/GetInformation";
-import { SingUp } from "./pages/SignUp";
-import { SingIn } from "./pages/SignIn";
+import Home from "./pages/Home";
+import Favs from "./pages/Favs";
+import Account from "./pages/Account";
+import Details from "./pages/Details";
+import GetInformation from "./pages/GetInformation";
+import SingUp from "./pages/SignUp";
+import SingIn from "./pages/SignIn";
 
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyles />
       <Router basepath="/hot-dogs/">
         <Home path="/" />
@@ -24,7 +26,7 @@ function App() {
         <SingIn path="/signin" />
         <GetInformation path="/information" />
       </Router>
-    </>
+    </Provider>
   );
 }
 

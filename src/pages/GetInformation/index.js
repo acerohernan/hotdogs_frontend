@@ -1,21 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { navigate } from "@reach/router";
 
 import { InfoContainer, Image, Form } from "./styles";
 
-import { Context } from "../../Context";
+import { connect } from "react-redux";
+import { activateAuthAction, addDogInfoAction } from "../../store/actions";
 
-export const GetInformation = () => {
-  const [accountInfo, setAccountInfo] = useState({});
-  const { userInfo, addUserInfo, activateAuth } = useContext(Context);
+const GetInformation = ({ activateAuth, addDogInfo }) => {
+  const [dogInfo, setDogInfo] = useState({});
 
   const handleInputChange = (e) => {
-    setAccountInfo({ ...accountInfo, [e.target.name]: e.target.value });
+    setDogInfo({ ...dogInfo, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addUserInfo({ ...userInfo, ...accountInfo });
+    addDogInfo(dogInfo);
     activateAuth();
     navigate("/hot-dogs/");
   };
@@ -78,3 +78,13 @@ export const GetInformation = () => {
     </InfoContainer>
   );
 };
+
+const mapStateToProps = (state) => ({
+  userInfo: state.user.userInfo,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  activateAuth: () => dispatch(activateAuthAction()),
+  addDogInfo: (dogInfo) => dispatch(addDogInfoAction(dogInfo)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(GetInformation);

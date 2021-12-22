@@ -1,5 +1,6 @@
 //libraries
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 //Components
 import { HiOutlineLocationMarker as LocationIcon } from "react-icons/hi";
@@ -17,8 +18,9 @@ import { Loader } from "../../components/Loader/index";
 //Utils
 import { names } from "../../names.json";
 import randomNumber from "../../utils/randomNumber";
+import { addFavoriteAction } from "../../store/actions";
 
-export const Home = () => {
+const Home = ({ isAuth, addFavorite, favorites }) => {
   const [dogInfo, setDogInfo] = useState({
     name: "",
     id: undefined,
@@ -45,8 +47,8 @@ export const Home = () => {
   const handleFavDog = (boolean) => {
     handleChangeCard();
     boolean
-      ? handleAnimation("animate__animated animate__fadeOutRight")
-      : handleAnimation("animate__animated animate__zoomOut");
+      ? handleAnimation("animate__animated animate__zoomOut")
+      : handleAnimation("animate__animated animate__fadeOutRight");
   };
 
   const handleChangeCard = async () => {
@@ -63,12 +65,14 @@ export const Home = () => {
     <>
       <CardLayout
         changeDog={() => {
-          handleFavDog(true);
-        }}
-        favDog={() => {
           handleFavDog(false);
         }}
-        dogInfo={dogInfo}
+        favDog={() => {
+          handleFavDog(true);
+          addFavorite(dogInfo);
+        }}
+        isAuth={isAuth}
+        favorites={favorites}
       >
         <Container className={animation}>
           <img src={url} alt="img" />
@@ -87,3 +91,14 @@ export const Home = () => {
     </>
   );
 };
+
+const mapStateToProps = (state) => ({
+  isAuth: state.user.isAuth,
+  favorites: state.favs,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addFavorite: (dog) => dispatch(addFavoriteAction(dog)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

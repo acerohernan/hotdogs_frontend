@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { navigate } from "@reach/router";
+import { connect } from "react-redux";
 
 import { FaDog as DogIcon } from "react-icons/fa";
 import { GiDogHouse } from "react-icons/gi";
@@ -16,10 +17,9 @@ import {
   LinkStyled,
 } from "./styles";
 
-import { Context } from "../../Context";
+import { removeFavoriteAction } from "../../store/actions";
 
-export const Details = () => {
-  const { favorites, removeFavorite } = useContext(Context);
+const Details = ({ favorites, removeFavorite }) => {
   const id = window.location.pathname.replace("/hot-dogs/details/", "");
 
   const arrDog = favorites.filter((fav) => fav.id === id)[0];
@@ -51,8 +51,8 @@ export const Details = () => {
           11 km away
         </ExtraInfo>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
-          expedita quas repellat tenetur..
+          I am a fun and playful puppy. I like to go for a walk with me owner
+          every Thursday. I am looking for a new friend for Thursday walks. 😊
         </p>
       </Information>
       <ButtonContainer>
@@ -66,3 +66,13 @@ export const Details = () => {
     </Container>
   );
 };
+
+const mapStateToProps = (state) => ({
+  favorites: state.favs,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  removeFavorite: (dog) => dispatch(removeFavoriteAction(dog)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);
