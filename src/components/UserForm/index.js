@@ -23,7 +23,7 @@ export const UserForm = ({ title, signup, addUserInfo }) => {
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Title>{title}</Title>
       {signup && (
         <Input
@@ -54,16 +54,8 @@ export const UserForm = ({ title, signup, addUserInfo }) => {
         {!signup && <Link to="/hot-dogs/signup">Sign up</Link>}
       </SignUp>
       <Buttons>
-        {signup && (
-          <Button onClick={handleSubmit} type="submit">
-            Sign up
-          </Button>
-        )}
-        {!signup && (
-          <Button onClick={handleSubmit} type="submit">
-            Sign in
-          </Button>
-        )}
+        {signup && <Button type="submit">Sign up</Button>}
+        {!signup && <Button type="submit">Sign in</Button>}
         <LinkStyled to="/hot-dogs/">Back to home</LinkStyled>
       </Buttons>
     </Form>
