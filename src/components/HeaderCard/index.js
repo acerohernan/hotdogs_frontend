@@ -25,7 +25,7 @@ export const HeaderCard = ({ isAuth, favorites }) => {
           </FavsModal>
         )}
       </LinkStyled>
-      <Link to={isAuth ? "/hot-dogs/" : "/hot-dogs/signup"}>
+      <Link to={isAuth ? "/hot-dogs/inbox" : "/hot-dogs/signup"}>
         <ChatIcon />
       </Link>
     </Header>

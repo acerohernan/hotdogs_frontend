@@ -13,6 +13,7 @@ import {
   Distance,
 } from "./styles";
 import { CardLayout } from "../../components/CardLayout/index";
+import { FooterCard } from "../../components/FooterCard";
 import { Loader } from "../../components/Loader/index";
 
 //Utils
@@ -61,19 +62,19 @@ const Home = ({ isAuth, addFavorite, favorites }) => {
   };
 
   const { url } = dogInfo;
+
+  const changeDog = () => {
+    handleFavDog(false);
+  };
+
+  const favDog = () => {
+    handleFavDog(true);
+    addFavorite(dogInfo);
+  };
+
   return (
     <>
-      <CardLayout
-        changeDog={() => {
-          handleFavDog(false);
-        }}
-        favDog={() => {
-          handleFavDog(true);
-          addFavorite(dogInfo);
-        }}
-        isAuth={isAuth}
-        favorites={favorites}
-      >
+      <CardLayout isAuth={isAuth} favorites={favorites}>
         <Container className={animation}>
           <img src={url} alt="img" />
           {loading ? <Loader /> : null}
@@ -87,6 +88,7 @@ const Home = ({ isAuth, addFavorite, favorites }) => {
             <span>{`${randomNumber(1, 10)} kilometers away`}</span>
           </Distance>
         </Container>
+        <FooterCard changeDog={changeDog} favDog={favDog} />
       </CardLayout>
     </>
   );

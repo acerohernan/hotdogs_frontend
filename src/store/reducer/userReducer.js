@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 const initialState = {
-  isAuth: false,
+  isAuth: true,
   userInfo: {
     username: "",
     firstName: "",

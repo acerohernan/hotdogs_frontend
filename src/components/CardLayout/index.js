@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { HeaderCard } from "../HeaderCard/index";
-import { FooterCard } from "../FooterCard/index";
 
 const Container = styled.div`
   width: 100%;
@@ -18,18 +17,11 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-export const CardLayout = ({
-  children,
-  changeDog,
-  favDog,
-  favorites,
-  isAuth,
-}) => {
+export const CardLayout = ({ children, favorites, isAuth }) => {
   return (
     <Container>
       <HeaderCard isAuth={isAuth} favorites={favorites} />
       {children}
-      <FooterCard changeDog={changeDog} favDog={favDog} />
     </Container>
   );
 };
