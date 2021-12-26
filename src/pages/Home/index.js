@@ -19,9 +19,9 @@ import { Loader } from "../../components/Loader/index";
 //Utils
 import { names } from "../../names.json";
 import randomNumber from "../../utils/randomNumber";
-import { addFavoriteAction } from "../../store/actions";
+import { addFavoriteAction, createChatAction } from "../../store/actions";
 
-const Home = ({ isAuth, addFavorite, favorites }) => {
+const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
   const [dogInfo, setDogInfo] = useState({
     name: "",
     id: undefined,
@@ -70,6 +70,7 @@ const Home = ({ isAuth, addFavorite, favorites }) => {
   const favDog = () => {
     handleFavDog(true);
     addFavorite(dogInfo);
+    createChat(dogInfo);
   };
 
   return (
@@ -101,6 +102,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addFavorite: (dog) => dispatch(addFavoriteAction(dog)),
+  createChat: (dog) => dispatch(createChatAction(dog)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

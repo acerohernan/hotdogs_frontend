@@ -1,49 +1,26 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "@reach/router";
 
-import img from "../../../../assets/static/hero.png";
+import { Container, DogImg } from "./styles";
 
-const Container = styled.div`
-  position: relative;
-  ::after {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    border-radius: 0 5px 5px 0;
-    background-color: black;
-    height: 50%;
-    position: absolute;
-    top: 25%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-`;
+export function Dog({ url, id }) {
+  const { hash } = useLocation();
 
-const Link = styled.a`
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
-`;
+  const [selected, setSelected] = useState(false);
 
-const DogImg = styled.img`
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 10px auto;
-  position: relative;
-`;
+  useEffect(() => {
+    let dogId;
+    if (hash) {
+      dogId = hash.replace("#", "");
+      setSelected(dogId === id);
+    }
+  }, [hash, id]);
 
-export function Dog() {
   return (
-    <Container>
-      <Link href="#id">
-        <DogImg src={img} />
-      </Link>
+    <Container selected={selected}>
+      <a href={`#${id}`}>
+        <DogImg src={url} />
+      </a>
     </Container>
   );
 }

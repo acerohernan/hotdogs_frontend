@@ -51,24 +51,60 @@ export const Messages = styled.div`
   width: 100%;
   height: 100%;
   border: 1px solid #dedede;
-  border: 1px solid #dedede;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
 `;
+export const MsgSended = styled.div`
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  display: flex;
+  justify-content: flex-end;
+  span {
+    background-color: blue;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+`;
+export const MsgReceived = styled.div`
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  display: flex;
+
+  span {
+    background-color: gray;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+`;
+
 export const MsgHeader = styled.div`
   width: 100%;
   border-radius: 5px;
   border: 1px solid #dedede;
-  padding: 10px 0;
-  span {
-    display: block;
-    padding: 0 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
-    font-weight: 300;
-    font-size: 1.7rem;
-    align-self: center;
-    font-family: "Roboto", sans-serif;
-  }
+  box-sizing: border-box;
+  padding: 5px 10px;
+`;
+
+export const Name = styled.span`
+  display: block;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 1.6rem;
+  align-self: center;
+  font-family: "Roboto", sans-serif;
+`;
+
+export const LastSeen = styled.span`
+  color: #808080;
+  font-size: 0.8rem;
 `;

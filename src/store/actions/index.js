@@ -32,3 +32,18 @@ export const removeFavoriteAction = (payload) => ({
   type: "REMOVE_FAVORITE",
   payload,
 });
+
+export const createChatAction = (payload) => ({
+  type: "CREATE_CHAT",
+  payload,
+});
+
+export const removeChatAction = (payload) => ({
+  type: "REMOVE_CHAT",
+  payload,
+});
+
+export const addMessageAction = (payload) => ({
+  type: "ADD_MESSAGE",
+  payload,
+});

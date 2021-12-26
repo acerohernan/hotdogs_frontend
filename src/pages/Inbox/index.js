@@ -1,22 +1,23 @@
 import React from "react";
-import { Container, SideBar } from "./styles";
-
 import { connect } from "react-redux";
 
 import { Dog } from "./components/Dog";
 import { Chat } from "./components/Chat";
 import { CardLayout } from "../../components/CardLayout";
 
-function Inbox({ favorites }) {
+import { Container, SideBar } from "./styles";
+import { addMessageAction } from "../../store/actions";
+
+function Inbox({ favorites, chats, addMessage }) {
   return (
     <CardLayout favorites={favorites}>
       <Container>
         <SideBar>
-          {[1, 2, 3, 4, 5, 6].map((dog, index) => (
-            <Dog key={index} />
+          {favorites.map((dog, index) => (
+            <Dog key={index} {...dog} />
           ))}
         </SideBar>
-        <Chat />
+        <Chat chats={chats} addMessage={addMessage} />
       </Container>
     </CardLayout>
   );
@@ -24,5 +25,11 @@ function Inbox({ favorites }) {
 
 const mapStateToProps = (state) => ({
   favorites: state.favs,
+  chats: state.chat,
 });
-export default connect(mapStateToProps)(Inbox);
+
+const mapDispatchToProps = (dispatch) => ({
+  addMessage: (msg) => dispatch(addMessageAction(msg)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Inbox);

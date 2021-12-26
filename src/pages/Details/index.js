@@ -17,9 +17,9 @@ import {
   LinkStyled,
 } from "./styles";
 
-import { removeFavoriteAction } from "../../store/actions";
+import { removeFavoriteAction, removeChatAction } from "../../store/actions";
 
-const Details = ({ favorites, removeFavorite }) => {
+const Details = ({ favorites, removeFavorite, removeChat }) => {
   const id = window.location.pathname.replace("/hot-dogs/details/", "");
 
   const arrDog = favorites.filter((fav) => fav.id === id)[0];
@@ -31,6 +31,7 @@ const Details = ({ favorites, removeFavorite }) => {
 
   const handleDeleteFav = () => {
     removeFavorite(dog);
+    removeChat(dog);
     navigate("/hot-dogs/favs");
   };
 
@@ -73,6 +74,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   removeFavorite: (dog) => dispatch(removeFavoriteAction(dog)),
+  removeChat: (dog) => dispatch(removeChatAction(dog)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Details);
