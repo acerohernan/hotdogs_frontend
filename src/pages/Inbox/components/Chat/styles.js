@@ -10,7 +10,7 @@ export const Container = styled.div`
   gap: 20px;
 `;
 
-export const InputContainer = styled.div`
+export const Form = styled.form`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 50px;
@@ -57,7 +57,7 @@ export const Messages = styled.div`
   padding: 10px;
   box-sizing: border-box;
 `;
-export const MsgSended = styled.div`
+export const Message = styled.div`
   width: 100%;
   height: auto;
   margin: 5px 0;
@@ -65,20 +65,6 @@ export const MsgSended = styled.div`
   justify-content: flex-end;
   span {
     background-color: blue;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 5px;
-    color: white;
-  }
-`;
-export const MsgReceived = styled.div`
-  width: 100%;
-  height: auto;
-  margin: 5px 0;
-  display: flex;
-
-  span {
-    background-color: gray;
     display: inline-block;
     padding: 10px;
     border-radius: 5px;

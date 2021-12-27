@@ -20,7 +20,7 @@ function chatReducer(state = initialState, action) {
         ...chatArr,
         {
           ...chat,
-          messages: [chat.messages, action.payload.message],
+          messages: [...chat.messages, action.payload.message],
         },
       ];
 

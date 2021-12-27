@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useHash from "../../../../hooks/useHash";
 import useElementByHash from "../../../../hooks/useElementByHash";
 
@@ -8,52 +8,67 @@ import {
   Container,
   MsgHeader,
   Messages,
-  InputContainer,
+  Form,
   Input,
   Button,
   Name,
   LastSeen,
-  MsgSended,
-  MsgReceived,
+  Message,
 } from "./styles";
 
 export function Chat({ chats, addMessage }) {
+  const [inputValue, setInputValue] = useState("");
+  const [messages, setMessages] = useState([]);
   const [hash] = useHash();
   const [chat] = useElementByHash(hash, chats);
 
-  const handleAddMessage = () => {
-    addMessage();
+  useEffect(() => {
+    if (hash && chat) setMessages(chat.messages);
+  }, [hash, chat]);
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleAddMessage = (e) => {
+    e.preventDefault();
+    addMessage({
+      id: chat.id,
+      message: inputValue,
+    });
+    setInputValue("");
   };
 
   return (
     <Container>
       <MsgHeader>
-        <Name>{chat ? chat.name : ""}</Name>
-        <LastSeen>Last seen 7 minutes ago</LastSeen>
+        {chats.length > 0 ? (
+          <>
+            <Name>{chat ? chat.name : ""}</Name>
+            <LastSeen>Last seen 7 minutes ago</LastSeen>
+          </>
+        ) : null}
       </MsgHeader>
       <Messages>
-        {chats.lenght > 0 &&
-          chat.messages.map((msg) => {
-            if (!msg.sended)
-              return (
-                <MsgReceived>
-                  <span>{msg.text}</span>
-                </MsgReceived>
-              );
-
-            return (
-              <MsgSended>
-                <span>{msg.text}</span>
-              </MsgSended>
-            );
-          })}
+        {messages &&
+          messages.map((msg, index) => (
+            <Message key={index}>
+              <span>{msg}</span>
+            </Message>
+          ))}
       </Messages>
-      <InputContainer>
-        <Input type="text" />
-        <Button>
+      <Form onSubmit={handleAddMessage}>
+        <Input
+          type="text"
+          onChange={handleChange}
+          value={inputValue}
+          placeholder="You can start a conversation..."
+          disabled={!hash}
+        />
+        <Button disabled={!hash}>
           <MdSend />
         </Button>
-      </InputContainer>
+      </Form>
     </Container>
   );
 }
