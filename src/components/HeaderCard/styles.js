@@ -97,6 +97,7 @@ export const UserIcon = styled(FaUserAlt)`
   color: #cdd0cb;
   :hover {
     color: gray;
+    transform: scale(115%);
   }
 `;
 
@@ -104,5 +105,6 @@ export const ChatIcon = styled(BsFillChatFill)`
   color: #cdd0cb;
   :hover {
     color: gray;
+    transform: scale(115%);
   }
 `;

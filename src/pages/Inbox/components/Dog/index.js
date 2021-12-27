@@ -14,6 +14,8 @@ export function Dog({ url, id }) {
       dogId = hash.replace("#", "");
       setSelected(dogId === id);
     }
+
+    if (!hash) setSelected(false);
   }, [hash, id]);
 
   return (

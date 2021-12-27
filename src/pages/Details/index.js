@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 
 import { FaDog as DogIcon } from "react-icons/fa";
 import { GiDogHouse } from "react-icons/gi";
-import { AiOutlineClose as CloseIcon } from "react-icons/ai";
+import {
+  AiOutlineHome as HomeIcon,
+  AiOutlineMessage as MessageIcon,
+} from "react-icons/ai";
 import { BsTrash as DeleteIcon } from "react-icons/bs";
 import {
   Container,
@@ -58,7 +61,10 @@ const Details = ({ favorites, removeFavorite, removeChat }) => {
       </Information>
       <ButtonContainer>
         <LinkStyled to="/hot-dogs/favs">
-          <CloseIcon />
+          <HomeIcon />
+        </LinkStyled>
+        <LinkStyled to={`/hot-dogs/inbox#${id}`}>
+          <MessageIcon />
         </LinkStyled>
         <Button onClick={handleDeleteFav}>
           <DeleteIcon />

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MatchIcon from "../../assets/static/MatchIcon";
+import { Link } from "@reach/router";
 
 export const Container = styled.div`
   width: 100%;
@@ -56,4 +57,31 @@ export const Icon = styled(MatchIcon)`
   display: block;
   margin: 0 auto;
   margin-top: -5px;
+`;
+
+export const Modal = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin-top: 10px;
+  }
+`;
+
+export const ModalImage = styled.img`
+  width: 40%;
+  border-radius: 50%;
+  object-fit: cover;
+`;
+
+export const ModalLink = styled(Link)`
+  margin-top: 10px;
+  background-color: #f05454;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  margin-top: 20px;
 `;

@@ -3,7 +3,17 @@ import { connect } from "react-redux";
 
 import { HeaderCard } from "../../components/HeaderCard/index";
 import { Link } from "@reach/router";
-import { Container, FavsContainer, Image, Icon } from "./styles";
+import {
+  Container,
+  FavsContainer,
+  Image,
+  Icon,
+  Modal,
+  ModalImage,
+  ModalLink,
+} from "./styles";
+
+import img from "../../assets/static/favDog.gif";
 
 const Favs = ({ favorites }) => {
   return (
@@ -19,8 +29,14 @@ const Favs = ({ favorites }) => {
             </Link>
           );
         })}
+        {favorites.length === 0 && (
+          <Modal>
+            <ModalImage src={img} />
+            <span>¡It´s time to get in love!</span>
+            <ModalLink to="/hot-dogs/">See dogs</ModalLink>
+          </Modal>
+        )}
       </FavsContainer>
-      {favorites.lenght < 1 && <h3>Let´s checks some dogs</h3>}
     </Container>
   );
 };

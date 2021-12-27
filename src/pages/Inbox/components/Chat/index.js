@@ -3,20 +3,19 @@ import useHash from "../../../../hooks/useHash";
 import useElementByHash from "../../../../hooks/useElementByHash";
 
 import { MdSend } from "react-icons/md";
+import { Messages } from "../Messages";
 
 import {
   Container,
   MsgHeader,
-  Messages,
   Form,
   Input,
   Button,
   Name,
   LastSeen,
-  Message,
 } from "./styles";
 
-export function Chat({ chats, addMessage }) {
+export function Chat({ favorites, chats, addMessage }) {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState([]);
   const [hash] = useHash();
@@ -42,21 +41,14 @@ export function Chat({ chats, addMessage }) {
   return (
     <Container>
       <MsgHeader>
-        {chats.length > 0 ? (
+        {hash && (
           <>
             <Name>{chat ? chat.name : ""}</Name>
             <LastSeen>Last seen 7 minutes ago</LastSeen>
           </>
-        ) : null}
+        )}
       </MsgHeader>
-      <Messages>
-        {messages &&
-          messages.map((msg, index) => (
-            <Message key={index}>
-              <span>{msg}</span>
-            </Message>
-          ))}
-      </Messages>
+      <Messages hash={hash} messages={messages} favorites={favorites} />
       <Form onSubmit={handleAddMessage}>
         <Input
           type="text"

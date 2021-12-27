@@ -2,13 +2,13 @@
 const initialState = {
   isAuth: true,
   userInfo: {
-    username: "",
-    firstName: "",
-    age: "",
-    gender: "",
-    height: "",
-    birthday: "",
-    preferences: "",
+    username: "demo",
+    firstName: "Demo Account",
+    age: "21",
+    gender: "Male - Female",
+    height: "1.80",
+    birthday: "31/12",
+    preferences: "I go to park with my person three times a week",
   },
 };
 

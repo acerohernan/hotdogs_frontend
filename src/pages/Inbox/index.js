@@ -17,7 +17,7 @@ function Inbox({ favorites, chats, addMessage }) {
             <Dog key={index} {...dog} />
           ))}
         </SideBar>
-        <Chat chats={chats} addMessage={addMessage} />
+        <Chat chats={chats} addMessage={addMessage} favorites={favorites} />
       </Container>
     </CardLayout>
   );

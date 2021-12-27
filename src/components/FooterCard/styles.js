@@ -20,9 +20,6 @@ export const Footer = styled.footer`
     background-color: white;
     transition: 0.2s all ease-in-out;
     box-shadow: 5px 4px 27px -8px rgba(0, 0, 0, 0.3);
-    :hover {
-      transform: scale(110%);
-    }
     svg {
       width: 25px;
       height: 25px;
@@ -32,8 +29,18 @@ export const Footer = styled.footer`
 
 export const CloseButton = styled.button`
   color: #6f9eaf;
+  :hover {
+    transform: scale(110%);
+    background-color: #6f9eaf;
+    color: white;
+  }
 `;
 
 export const FavButton = styled.button`
   color: #f05454;
+  :hover {
+    transform: scale(110%);
+    background-color: #f05454;
+    color: white;
+  }
 `;

@@ -22,11 +22,12 @@ export const Image = styled.img`
 
 export const Information = styled.div`
   width: 100%;
-  height: 51%;
   display: flex;
   flex-direction: column;
   object-fit: cover;
   overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
   p {
     margin-top: 15px;
     margin-left: 10px;
@@ -72,7 +73,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 50%;
   padding: 5px;
-  margin: 0 10px;
+
   cursor: pointer;
   outline: none;
   transition: 0.3s all ease-in-out;
@@ -96,6 +97,7 @@ export const LinkStyled = styled(Link)`
   background-color: #efefef;
   border-radius: 50%;
   transition: 0.3s all ease-in-out;
+  margin-right: 20px;
   :hover {
     transform: scale(125%);
   }

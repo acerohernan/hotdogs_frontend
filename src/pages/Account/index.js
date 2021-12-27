@@ -20,7 +20,7 @@ import {
 
 import { navigate } from "@reach/router";
 import { connect } from "react-redux";
-
+import img from "../../assets/static/account.gif";
 import { inactivateAuthAction } from "../../store/actions";
 
 const Account = ({ inactivateAuth, userInfo }) => {
@@ -29,13 +29,13 @@ const Account = ({ inactivateAuth, userInfo }) => {
 
   const handleCloseSession = () => {
     inactivateAuth();
-    navigate("/hot-dogs/");
+    navigate("/hot-dogs/signup");
   };
 
   return (
     <Container>
       <Username>{`@${username ? username : "username"}`}</Username>
-      <Image src="https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png" />
+      <Image src={img} />
       <Card>
         <span>
           <FirstNameIcon />
@@ -64,7 +64,7 @@ const Account = ({ inactivateAuth, userInfo }) => {
       </Card>
       <Buttons>
         <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
-        <CloseButton onClick={handleCloseSession}>Close Session</CloseButton>
+        <CloseButton onClick={handleCloseSession}>Create Account</CloseButton>
       </Buttons>
     </Container>
   );
