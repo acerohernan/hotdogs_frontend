@@ -10,6 +10,7 @@ import { FaTransgender, FaBirthdayCake } from "react-icons/fa";
 
 import {
   Container,
+  Main,
   Username,
   Image,
   Card,
@@ -34,34 +35,36 @@ const Account = ({ inactivateAuth, userInfo }) => {
 
   return (
     <Container>
-      <Username>{`@${username ? username : "username"}`}</Username>
-      <Image src={img} />
-      <Card>
-        <span>
-          <FirstNameIcon />
-          {`First Name: ${firstName}`}
-        </span>
-        <span>
-          <GiJumpingDog />
-          {`Age: ${age}`}
-        </span>
-        <span>
-          <FaTransgender />
-          {`Gender: ${gender}`}
-        </span>
-        <span>
-          <GiBodyHeight />
-          {`Height: ${height}`}
-        </span>
-        <span>
-          <FaBirthdayCake />
-          {`Birthday: ${birthday}`}
-        </span>
-        <span>
-          <GiDogBowl />
-          {`Preferences: ${preferences}`}
-        </span>
-      </Card>
+      <Main>
+        <Username>{`@${username ? username : "username"}`}</Username>
+        <Image src={img} />
+        <Card>
+          <span>
+            <FirstNameIcon />
+            {`First Name: ${firstName}`}
+          </span>
+          <span>
+            <GiJumpingDog />
+            {`Age: ${age}`}
+          </span>
+          <span>
+            <FaTransgender />
+            {`Gender: ${gender}`}
+          </span>
+          <span>
+            <GiBodyHeight />
+            {`Height: ${height}`}
+          </span>
+          <span>
+            <FaBirthdayCake />
+            {`Birthday: ${birthday}`}
+          </span>
+          <span>
+            <GiDogBowl />
+            {`Preferences: ${preferences}`}
+          </span>
+        </Card>
+      </Main>
       <Buttons>
         <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
         <CloseButton onClick={handleCloseSession}>Create Account</CloseButton>

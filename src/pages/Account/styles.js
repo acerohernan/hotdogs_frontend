@@ -4,14 +4,21 @@ import { Link } from "@reach/router";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+  padding: 0 20px;
   max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
   margin: 0 auto;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 100px;
+`;
+
+export const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Username = styled.h1`
@@ -20,19 +27,20 @@ export const Username = styled.h1`
   font-size: 1.5rem;
 `;
 
-export const Buttons = styled.div`
-  width: 86%;
-  max-width: 450px;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 20px;
-  position: absolute;
-  bottom: 0;
-  margin: 20px 0;
+export const Image = styled.img`
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-bottom: 20px;
+  box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, 0.35);
+  :hover {
+    box-shadow: none;
+  }
 `;
 
 export const Card = styled.div`
-  width: 85%;
+  width: 100%;
   max-width: 450px;
   margin: 0 auto;
   border-radius: 10px;
@@ -52,44 +60,39 @@ export const Card = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 100%;
-  margin-bottom: 20px;
-  box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, 0.35);
-  :hover {
-    box-shadow: none;
-  }
+export const Buttons = styled.div`
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 `;
 
 export const LinkStyledRed = styled(Link)`
-  width: 80px;
-  height: 15px;
-  padding: 10px 15px;
   background-color: #f05454;
   color: white;
-  border-radius: 20px;
-  align-self: flex-start;
-  margin-top: 20px;
-  margin-left: 7%;
-  font-size: 0.7rem;
-  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  transition: 0.3s all ease-in-out;
+  :hover {
+    transform: scale(115%);
+  }
 `;
 
 export const CloseButton = styled.button`
-  display: inline-block;
-  width: auto;
-  height: 35px;
-  padding: 10px 15px;
   background-color: #6f9eaf;
-  color: white;
-  border-radius: 20px;
-  align-self: flex-end;
-  margin-top: 20px;
-  margin-right: 7%;
-  font-size: 0.8rem;
-  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
   border: none;
+  outline: none;
+  color: white;
+  font-size: 0.9rem;
+  transition: 0.3s all ease-in-out;
+  :hover {
+    transform: scale(115%);
+  }
 `;
