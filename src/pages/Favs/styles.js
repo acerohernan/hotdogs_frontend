@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
   border: 1px solid #dedede;
   border-radius: 5px;
@@ -13,6 +13,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 60px 75px 1fr;
+  background-color: white;
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
 `;
 
 export const FavsContainer = styled.div`

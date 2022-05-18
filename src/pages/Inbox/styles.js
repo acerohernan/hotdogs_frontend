@@ -9,6 +9,10 @@ export const Container = styled.div`
   grid-template-columns: 100px 1fr;
   padding-bottom: 20px;
   box-sizing: border-box;
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
 `;
 
 export const SideBar = styled.div`

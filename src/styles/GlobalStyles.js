@@ -11,6 +11,13 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
   }
 
+  body{
+    @media(min-width: 640px){
+    background-color: #1B1A17;
+    padding: 20px 0;
+  }
+  }
+
   ul{
     list-style:none;
   }

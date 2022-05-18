@@ -9,11 +9,17 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
-  max-width: 600px;
+  max-width: 550px;
   box-sizing: border-box;
+  background-color: white;
+
   @media (max-width: 600px) {
     width: 100%;
     box-shadow: none;
+  }
+
+  @media(min-width: 640px){
+    height: 95vh;
   }
 `;
 

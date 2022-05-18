@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const InfoContainer = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
   height: 100vh;
   display: flex;
@@ -12,6 +12,11 @@ export const InfoContainer = styled.div`
   border-radius: 5px;
   border: 1px solid #d3d3d3;
   box-sizing: border-box;
+  background-color: white;
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
 `;
 
 export const Image = styled.img`

@@ -5,7 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding: 0 20px;
-  max-width: 600px;
+  max-width: 550px;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
   margin: 0 auto;
@@ -13,6 +13,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 100px;
+  background-color: white;
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
 `;
 
 export const Main = styled.div`
