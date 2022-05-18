@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/hot-dogs/static/js/main.b0d6bd17.chunk.js",
-    "main.js.map": "/hot-dogs/static/js/main.b0d6bd17.chunk.js.map",
+    "main.js": "/hot-dogs/static/js/main.c27fcfd1.chunk.js",
+    "main.js.map": "/hot-dogs/static/js/main.c27fcfd1.chunk.js.map",
     "runtime-main.js": "/hot-dogs/static/js/runtime-main.e29a9784.js",
     "runtime-main.js.map": "/hot-dogs/static/js/runtime-main.e29a9784.js.map",
     "static/js/2.30a09360.chunk.js": "/hot-dogs/static/js/2.30a09360.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.e29a9784.js",
     "static/js/2.30a09360.chunk.js",
-    "static/js/main.b0d6bd17.chunk.js"
+    "static/js/main.c27fcfd1.chunk.js"
   ]
 }
