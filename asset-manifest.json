@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/hot-dogs/static/js/main.c27fcfd1.chunk.js",
-    "main.js.map": "/hot-dogs/static/js/main.c27fcfd1.chunk.js.map",
+    "main.js": "/hot-dogs/static/js/main.bc9e419b.chunk.js",
+    "main.js.map": "/hot-dogs/static/js/main.bc9e419b.chunk.js.map",
     "runtime-main.js": "/hot-dogs/static/js/runtime-main.e29a9784.js",
     "runtime-main.js.map": "/hot-dogs/static/js/runtime-main.e29a9784.js.map",
-    "static/js/2.30a09360.chunk.js": "/hot-dogs/static/js/2.30a09360.chunk.js",
-    "static/js/2.30a09360.chunk.js.map": "/hot-dogs/static/js/2.30a09360.chunk.js.map",
+    "static/js/2.b252413f.chunk.js": "/hot-dogs/static/js/2.b252413f.chunk.js",
+    "static/js/2.b252413f.chunk.js.map": "/hot-dogs/static/js/2.b252413f.chunk.js.map",
     "index.html": "/hot-dogs/index.html",
-    "static/js/2.30a09360.chunk.js.LICENSE.txt": "/hot-dogs/static/js/2.30a09360.chunk.js.LICENSE.txt",
+    "static/js/2.b252413f.chunk.js.LICENSE.txt": "/hot-dogs/static/js/2.b252413f.chunk.js.LICENSE.txt",
     "static/media/account.537e8e54.gif": "/hot-dogs/static/media/account.537e8e54.gif",
     "static/media/favDog.c9e8632f.gif": "/hot-dogs/static/media/favDog.c9e8632f.gif",
     "static/media/inLove.9377caa6.gif": "/hot-dogs/static/media/inLove.9377caa6.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.e29a9784.js",
-    "static/js/2.30a09360.chunk.js",
-    "static/js/main.c27fcfd1.chunk.js"
+    "static/js/2.b252413f.chunk.js",
+    "static/js/main.bc9e419b.chunk.js"
   ]
 }
