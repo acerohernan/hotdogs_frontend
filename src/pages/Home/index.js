@@ -1,6 +1,7 @@
 //libraries
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import {useNavigate} from "@reach/router"
 
 //Components
 import { HiOutlineLocationMarker as LocationIcon } from "react-icons/hi";
@@ -20,6 +21,8 @@ import { Loader } from "../../components/Loader/index";
 import { names } from "../../names.json";
 import randomNumber from "../../utils/randomNumber";
 import { addFavoriteAction, createChatAction } from "../../store/actions";
+import API from "../../api";
+import toast from "react-hot-toast";
 
 const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
   const [dogInfo, setDogInfo] = useState({
@@ -29,6 +32,8 @@ const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
   });
   const [loading, setLoading] = useState(false);
   const [animation, setAnimation] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     handleChangeCard();
@@ -51,7 +56,7 @@ const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
       ? handleAnimation("animate__animated animate__zoomOut")
       : handleAnimation("animate__animated animate__fadeOutRight");
   };
-
+  
   const handleChangeCard = async () => {
     setLoading(true);
     const response = await fetch("https://api.thedogapi.com/v1/images/search");
@@ -67,10 +72,15 @@ const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
     handleFavDog(false);
   };
 
-  const favDog = () => {
+  const favDog = async() => {
+    if(!isAuth){
+      return navigate('/hot-dogs/signin');
+    };   
+
     handleFavDog(true);
     addFavorite(dogInfo);
     createChat(dogInfo);
+    toast.success("Dog added successfully");
   };
 
   return (

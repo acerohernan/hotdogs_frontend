@@ -1,3 +1,23 @@
+export const loginSuccessAction = (payload) => ({
+  type: "LOGIN_SUCCESS",
+  payload
+});
+
+export const logoutAction = (payload) => ({
+  type: "LOGOUT_SUCCESS",
+  payload
+});
+
+export const selectDogAction = (payload) => ({
+  type: "SELECT_DOG",
+  payload
+});
+
+export const deleteDogAction = (payload) => ({
+  type: "DELETE_DOG",
+  payload
+});
+
 export const activateAuthAction = (payload) => ({
   type: "ACTIVATE_AUTH",
   payload,

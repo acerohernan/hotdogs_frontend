@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
   border-radius: 5px;
   border: 1px solid #d3d3d3;
@@ -12,6 +12,11 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 300px 1fr 80px;
+  background-color: white;
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
 `;
 
 export const Image = styled.img`

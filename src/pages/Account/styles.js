@@ -101,3 +101,61 @@ export const CloseButton = styled.button`
     transform: scale(115%);
   }
 `;
+
+export const ModalContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  max-width: 550px;
+  border: 1px solid #d3d3d3;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+
+  img{
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-bottom: 20px;  
+  }
+
+  span{
+    max-width: 300px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  div{
+
+    margin-top:20px;
+
+    a{
+      margin-right: 7px;
+    }
+    button{
+      margin-left: 7px;
+    }
+  };
+
+  @media(min-width: 640px){
+    height: 95vh;
+  }
+`;
+
+export const ButtonRed = styled.button`  
+  background-color: #f05454;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  transition: 0.3s all ease-in-out;
+  border: none;
+  :hover {
+    transform: scale(115%);
+  }
+`;

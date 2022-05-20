@@ -1,78 +1,123 @@
 import React, { useState } from "react";
 import { navigate } from "@reach/router";
+import {TiWarningOutline as WarningIcon} from "react-icons/ti";
 
-import { InfoContainer, Image, Form } from "./styles";
+import { InfoContainer, Image, Form, ErrorMessage } from "./styles";
 
 import { connect } from "react-redux";
 import { activateAuthAction, addDogInfoAction } from "../../store/actions";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import API from "../../api";
 
 const GetInformation = ({ activateAuth, addDogInfo }) => {
   const [dogInfo, setDogInfo] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  const {register, handleSubmit, formState: {errors}} = useForm();
 
   const handleInputChange = (e) => {
     setDogInfo({ ...dogInfo, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    addDogInfo(dogInfo);
-    activateAuth();
-    navigate("/hot-dogs/");
+  const onSubmit = async(data) => {
+    setLoading(true);
+    try{
+      const response = await API.dog.create(data);
+      toast.success(response.data?.message || "Dog created successfully.");
+      setLoading(false);
+      navigate("/hot-dogs/choose");
+    }catch(err){
+      toast.error(err.response?.data?.message || "An error was ocurred");
+      setLoading(false);
+    };
   };
+
+  const showErrorMessage = (name) => {
+    if(!errors[`${name}`]) return null;
+
+    return <ErrorMessage style={{}}>
+      <WarningIcon height={10} width={10}/>
+      <span>{errors[`${name}`].message}</span>
+    </ErrorMessage>
+  };
+
   return (
     <InfoContainer>
       <Image src="https://image.freepik.com/vector-gratis/mejor-amigo-simbolo-perro-mascota-cara-cinta-roja_3446-319.jpg" />
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <h1>CREATE A DOG ACCOUNT</h1>
         <input
-          required
           type="text"
           name="firstName"
-          onChange={handleInputChange}
           placeholder="First Name"
+          {...register('first_name', {
+            required: "First name is required.",
+            min: {
+              value: 6,
+              message: "First name must have 6 characters."
+            }
+          })}
         />
+        {showErrorMessage('first_name')}
         <input
-          required
-          type="number"
           name="age"
-          onChange={handleInputChange}
+          type="number"
           placeholder="Age"
+          {...register('age', {
+            required: "Age is required.",
+            maxLength: {
+              value: 2,
+              message: "Age must have only 2 characters."
+            }
+          })}
         />
+        {showErrorMessage('age')}       
         <input
-          required
           type="text"
           name="breed"
-          onChange={handleInputChange}
           placeholder="Breed (Raza)"
+          {...register('breed', {
+            required: "Breed is required."
+          })}
         />
+        {showErrorMessage('breed')}
         <input
-          required
           type="number"
           name="height"
-          onChange={handleInputChange}
           placeholder="Height (cm)"
+          {...register('height', {
+            required: "Height is required."
+          })}
         />
+        {showErrorMessage('height')}
         <input
-          required
           type="text"
           name="gender"
-          onChange={handleInputChange}
           placeholder="Gender"
+          {...register('gender', {
+            required: "Gender is required."
+          })}
         />
+        {showErrorMessage('gender')}
         <input
-          required
           type="text"
-          name="birthday"
-          onChange={handleInputChange}
-          placeholder="Birthday"
+          name="birthday_date"
+          placeholder="Birthday date"
+          {...register('birthday_date', {
+            required: "Birthday date is required."
+          })}
         />
+        {showErrorMessage('birthday_date')}
         <input
-          required
           type="text"
           name="preferences"
-          onChange={handleInputChange}
           placeholder="Preferences"
+          {...register('preferences', {
+            required: "Preferences is required."
+          })}
         />
+        {showErrorMessage('preferences')}
         <button type="submit">Create</button>
       </Form>
     </InfoContainer>

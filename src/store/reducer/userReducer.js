@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 const initialState = {
-  isAuth: true,
+  isAuth: Boolean(localStorage.getItem("token") || ""),
   userInfo: {
     username: "demo",
     firstName: "Demo Account",
@@ -14,10 +14,10 @@ const initialState = {
 
 function userReducer(state = initialState, action) {
   switch (action.type) {
-    case "ACTIVATE_AUTH":
+    case "LOGIN_SUCCESS":
       return { ...state, isAuth: true };
       break;
-    case "INACTIVATE_AUTH":
+    case "LOGOUT_SUCCESS":
       return { ...state, isAuth: false };
       break;
     case "SIGN_UP":

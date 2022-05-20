@@ -74,3 +74,33 @@ export const LinkStyled = styled(Link)`
   border-radius: 30px;
   font-size: 0.9rem;
 `;
+
+export const ErrorMessage = styled.span`
+  display: flex;
+  align-items: center;
+
+  svg{
+    color: red;
+    margin-right: 2px;
+  }
+
+  span{
+    color: red;
+    font-size: 0.8rem;
+  }
+`;
+
+export const ModalContainer = styled.div`
+  button {
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 10px;
+    transition: 0.5s all ease;
+    background-color: white;
+    margin-top: 10px;
+    justify-self: left;
+  }
+`;

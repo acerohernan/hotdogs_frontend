@@ -68,3 +68,18 @@ export const Form = styled.form`
     margin: 40px 0 20px;
   }
 `;
+
+export const ErrorMessage = styled.span`
+  display: flex;
+  align-items: center;
+
+  svg{
+    color: red;
+    margin-right: 2px;
+  }
+
+  span{
+    color: red;
+    font-size: 0.8rem;
+  }
+`;
