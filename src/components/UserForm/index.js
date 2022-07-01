@@ -19,7 +19,7 @@ export const UserForm = ({ title, signup, addUserInfo, isAuth, logIn }) => {
 
   useEffect(() => {
     if(isAuth){
-      navigate('/hot-dogs/choose')
+      navigate('/hotdogs_frontend/choose')
     };
   }, [isAuth]);
 
@@ -127,11 +127,11 @@ export const UserForm = ({ title, signup, addUserInfo, isAuth, logIn }) => {
       {showErrorMessage("password")}
       <SignUp>
         Do you have an acount?
-        {signup && <Link to="/hot-dogs/signin">Sign in</Link>}
-        {!signup && <Link to="/hot-dogs/signup">Sign up</Link>}
+        {signup && <Link to="/hotdogs_frontend/signin">Sign in</Link>}
+        {!signup && <Link to="/hotdogs_frontend/signup">Sign up</Link>}
       </SignUp>
       <Buttons>
-        <LinkStyled to="/hot-dogs/">Back to home</LinkStyled>
+        <LinkStyled to="/hotdogs_frontend/">Back to home</LinkStyled>
         {signup && <Button type="submit">Sign up</Button>}
         {!signup && <Button type="submit">Sign in</Button>}
       </Buttons>

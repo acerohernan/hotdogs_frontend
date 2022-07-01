@@ -6,16 +6,16 @@ import { GiSevenPointedStar as StarIcon } from "react-icons/gi";
 import { Header, LinkStyled, FavsModal, UserIcon, ChatIcon } from "./styles";
 
 export const HeaderCard = ({ isAuth, favorites }) => {
-  const showFavs = window.location.pathname === "/hot-dogs/favs";
+  const showFavs = window.location.pathname === "/hotdogs_frontend/favs";
 
   return (
     <Header>
-      <Link to="/hot-dogs/account">
+      <Link to="/hotdogs_frontend/account">
         <UserIcon />
       </Link>
       <LinkStyled
         className={showFavs ? "favs" : ""}
-        to={showFavs ? "/hot-dogs/" : "/hot-dogs/favs"}
+        to={showFavs ? "/hotdogs_frontend/" : "/hotdogs_frontend/favs"}
       >
         <FireIcon className={showFavs ? "" : "fire"} />
         <StarIcon className={showFavs ? "star" : ""} />
@@ -25,7 +25,7 @@ export const HeaderCard = ({ isAuth, favorites }) => {
           </FavsModal>
         )}
       </LinkStyled>
-      <Link to="/hot-dogs/inbox">
+      <Link to="/hotdogs_frontend/inbox">
         <ChatIcon />
       </Link>
     </Header>

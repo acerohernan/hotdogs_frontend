@@ -26,7 +26,7 @@ const GetInformation = ({ activateAuth, addDogInfo }) => {
       const response = await API.dog.create(data);
       toast.success(response.data?.message || "Dog created successfully.");
       setLoading(false);
-      navigate("/hot-dogs/choose");
+      navigate("/hotdogs_frontend/choose");
     }catch(err){
       toast.error(err.response?.data?.message || "An error was ocurred");
       setLoading(false);

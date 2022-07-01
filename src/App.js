@@ -22,7 +22,7 @@ function App() {
     <Provider store={store}>
       <GlobalStyles />
       <Toaster position="top-center" reverseOrder={false}/>
-      <Router basepath="/hot-dogs/">
+      <Router basepath="/hotdogs_frontend/">
         <Home path="/" />
         <Favs path="/favs" />
         <Details path="/details/:dogId" />

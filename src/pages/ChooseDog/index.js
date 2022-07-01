@@ -38,7 +38,7 @@ function ChooseDog({selectDog}) {
     selectDog(dog);
     localStorage.setItem("selectedDog", JSON.stringify(dog));
     toast.success(`${dog.first_name} was selected.`);
-    navigate('/hot-dogs/');
+    navigate('/hotdogs_frontend/');
   };
   return (
     <Container>
@@ -56,7 +56,7 @@ function ChooseDog({selectDog}) {
                   ))
                 }
               </DogContainer>
-              <CreateLink to="/hot-dogs/information">Create dog</CreateLink>
+              <CreateLink to="/hotdogs_frontend/information">Create dog</CreateLink>
             </>
           )
         }
@@ -65,7 +65,7 @@ function ChooseDog({selectDog}) {
             <CreateDog>
               <Image src={img} />
               <span>Oh! Seems that you not have a dog. Please create one to continue</span>
-              <LinkStyled to="/hot-dogs/information">Create dog</LinkStyled>
+              <LinkStyled to="/hotdogs_frontend/information">Create dog</LinkStyled>
             </CreateDog>
           )
         }

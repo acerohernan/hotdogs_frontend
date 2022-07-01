@@ -23,7 +23,7 @@ import {
 import { removeFavoriteAction, removeChatAction } from "../../store/actions";
 
 const Details = ({ favorites, removeFavorite, removeChat }) => {
-  const id = window.location.pathname.replace("/hot-dogs/details/", "");
+  const id = window.location.pathname.replace("/hotdogs_frontend/details/", "");
 
   const arrDog = favorites.filter((fav) => fav.id === id)[0];
   let dog = {};
@@ -35,7 +35,7 @@ const Details = ({ favorites, removeFavorite, removeChat }) => {
   const handleDeleteFav = () => {
     removeFavorite(dog);
     removeChat(dog);
-    navigate("/hot-dogs/favs");
+    navigate("/hotdogs_frontend/favs");
   };
 
   return (
@@ -60,10 +60,10 @@ const Details = ({ favorites, removeFavorite, removeChat }) => {
         </p>
       </Information>
       <ButtonContainer>
-        <LinkStyled to="/hot-dogs/favs">
+        <LinkStyled to="/hotdogs_frontend/favs">
           <HomeIcon />
         </LinkStyled>
-        <LinkStyled to={`/hot-dogs/inbox#${id}`}>
+        <LinkStyled to={`/hotdogs_frontend/inbox#${id}`}>
           <MessageIcon />
         </LinkStyled>
         <Button onClick={handleDeleteFav}>

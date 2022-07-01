@@ -74,7 +74,7 @@ const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
 
   const favDog = async() => {
     if(!isAuth){
-      return navigate('/hot-dogs/signin');
+      return navigate('/hotdogs_frontend/signin');
     };   
 
     handleFavDog(true);

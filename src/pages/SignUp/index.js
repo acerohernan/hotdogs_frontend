@@ -21,7 +21,7 @@ const SignUpPage = ({ signUpMethod }) => {
       const response = await API.auth.register(data);
       toast.success(response.data?.message || "Success");
       toast.success("Please login with your new account to continue.");
-      navigate('/hot-dogs/signin');
+      navigate('/hotdogs_frontend/signin');
     }catch(err){
       toast.error(err.response?.message || "An error was ocurred");
     }
@@ -97,10 +97,10 @@ const SignUpPage = ({ signUpMethod }) => {
       {showErrorMessage("re_password")}
       <SignUp>
         Do you have an acount?
-        <Link to="/hot-dogs/signin" style={{textDecoration: "underline"}}>Login</Link>
+        <Link to="/hotdogs_frontend/signin" style={{textDecoration: "underline"}}>Login</Link>
       </SignUp>
       <Buttons>
-        <LinkStyled to="/hot-dogs/">Back to home</LinkStyled>
+        <LinkStyled to="/hotdogs_frontend/">Back to home</LinkStyled>
         <Button type="submit">Create account</Button>
       </Buttons>
     </Form>

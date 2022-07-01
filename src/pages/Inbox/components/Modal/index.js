@@ -10,7 +10,7 @@ export function Modal({ favorites, hash, messages }) {
         <>
           <Image src={img} />
           <span>You need to have a match to start a conversation</span>
-          <LinkStyled to="/hot-dogs/">See dogs</LinkStyled>
+          <LinkStyled to="/hotdogs_frontend/">See dogs</LinkStyled>
         </>
       )}
       {favorites.length >= 1 && !hash && (

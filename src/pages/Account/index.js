@@ -56,7 +56,7 @@ const Account = ({ inactivateAuth, userInfo, selectedDog, isAuth, isSelected, de
   const handleChangeDog = () => {
     localStorage.removeItem("selectedDog");
     deleteDog();
-    navigate('/hot-dogs/choose');
+    navigate('/hotdogs_frontend/choose');
   };
 
   if(!isSelected){
@@ -65,8 +65,8 @@ const Account = ({ inactivateAuth, userInfo, selectedDog, isAuth, isSelected, de
         <img src={img} alt="Dog Account" />
         <span>Please select a dog to see the information</span>
         <div>
-        <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
-         <CloseButton onClick={() => navigate('/hot-dogs/signup')}>Create account</CloseButton>
+        <LinkStyledRed to="/hotdogs_frontend/">Back to home</LinkStyledRed>
+         <CloseButton onClick={() => navigate('/hotdogs_frontend/signup')}>Create account</CloseButton>
         </div>
       </ModalContainer>
     )
@@ -105,7 +105,7 @@ const Account = ({ inactivateAuth, userInfo, selectedDog, isAuth, isSelected, de
         </Card>
       </Main>
       <Buttons>
-        <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
+        <LinkStyledRed to="/hotdogs_frontend/">Back to home</LinkStyledRed>
         <CloseButton onClick={handleChangeDog}>Change Dog</CloseButton>
         <ButtonRed onClick={handleCloseSession}>Close session</ButtonRed>
       </Buttons>
