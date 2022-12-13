@@ -12,6 +12,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 300px 1fr 80px;
+  background-color: white;
 `;
 
 export const Image = styled.img`

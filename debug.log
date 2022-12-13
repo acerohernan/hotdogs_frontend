@@ -1,5 +1,0 @@
-[0103/090349.696:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
-[0103/155856.786:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
-[0103/234427.577:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
-[0104/213729.715:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
-[0105/145326.246:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)

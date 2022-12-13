@@ -17,7 +17,7 @@ const GetInformation = ({ activateAuth, addDogInfo }) => {
     event.preventDefault();
     addDogInfo(dogInfo);
     activateAuth();
-    navigate("/hot-dogs/");
+    navigate("/");
   };
   return (
     <InfoContainer>

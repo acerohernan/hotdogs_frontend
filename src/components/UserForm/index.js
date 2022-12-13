@@ -10,7 +10,7 @@ export const UserForm = ({ title, signup, addUserInfo }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addUserInfo(userInfo);
-    navigate("/hot-dogs/information");
+    navigate("/information");
   };
 
   const handleInputChange = (event) => {
@@ -50,13 +50,13 @@ export const UserForm = ({ title, signup, addUserInfo }) => {
       />
       <SignUp>
         Do you have an acount?
-        {signup && <Link to="/hot-dogs/signin">Sign in</Link>}
-        {!signup && <Link to="/hot-dogs/signup">Sign up</Link>}
+        {signup && <Link to="/signin">Sign in</Link>}
+        {!signup && <Link to="/signup">Sign up</Link>}
       </SignUp>
       <Buttons>
         {signup && <Button type="submit">Sign up</Button>}
         {!signup && <Button type="submit">Sign in</Button>}
-        <LinkStyled to="/hot-dogs/">Back to home</LinkStyled>
+        <LinkStyled to="/">Back to home</LinkStyled>
       </Buttons>
     </Form>
   );

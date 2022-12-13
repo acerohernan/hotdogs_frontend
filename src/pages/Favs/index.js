@@ -24,7 +24,7 @@ const Favs = ({ favorites }) => {
         {favorites.map((fav) => {
           const { id, url } = fav;
           return (
-            <Link to={`/hot-dogs/details/${id}`} key={id}>
+            <Link to={`/details/${id}`} key={id}>
               <Image src={url} />
             </Link>
           );
@@ -33,7 +33,7 @@ const Favs = ({ favorites }) => {
           <Modal>
             <ModalImage src={img} />
             <span>¡It´s time to get in love!</span>
-            <ModalLink to="/hot-dogs/">See dogs</ModalLink>
+            <ModalLink to="/">See dogs</ModalLink>
           </Modal>
         )}
       </FavsContainer>

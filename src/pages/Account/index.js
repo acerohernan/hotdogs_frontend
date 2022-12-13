@@ -30,7 +30,7 @@ const Account = ({ inactivateAuth, userInfo }) => {
 
   const handleCloseSession = () => {
     inactivateAuth();
-    navigate("/hot-dogs/signup");
+    navigate("/signup");
   };
 
   return (
@@ -66,7 +66,7 @@ const Account = ({ inactivateAuth, userInfo }) => {
         </Card>
       </Main>
       <Buttons>
-        <LinkStyledRed to="/hot-dogs/">Back to home</LinkStyledRed>
+        <LinkStyledRed to="/">Back to home</LinkStyledRed>
         <CloseButton onClick={handleCloseSession}>Create Account</CloseButton>
       </Buttons>
     </Container>
