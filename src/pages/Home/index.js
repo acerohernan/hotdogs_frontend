@@ -17,7 +17,7 @@ import { FooterCard } from "../../components/FooterCard";
 import { Loader } from "../../components/Loader/index";
 
 //Utils
-import { names } from "../../names.json";
+import names from "../../names.json";
 import randomNumber from "../../utils/randomNumber";
 import { addFavoriteAction, createChatAction } from "../../store/actions";
 
@@ -56,7 +56,7 @@ const Home = ({ isAuth, addFavorite, createChat, favorites }) => {
     setLoading(true);
     const response = await fetch("https://api.thedogapi.com/v1/images/search");
     const [data] = await response.json();
-    const name = names[randomNumber(0, 20)];
+    const name = names.names[randomNumber(0, 20)];
     setDogInfo({ ...data, name });
     setLoading(false);
   };
